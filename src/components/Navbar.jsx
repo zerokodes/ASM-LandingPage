@@ -81,13 +81,15 @@ export default function Navbar() {
 
         {/* CTAs */}
         <div className="hidden md:flex" style={{ alignItems: 'center', gap: 12 }}>
-          <a href="#contact" className="btn-ghost" style={{ padding: '0.5rem 1.25rem', fontSize: '0.8125rem' }}>Contact Sales</a>
+          <a href="https://wa.me/2348100000000?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20ASM" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ padding: '0.5rem 1.25rem', fontSize: '0.8125rem' }}>Contact Sales</a>
           <a href="#get-started" className="btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.8125rem' }}>Get Started Free</a>
         </div>
 
         {/* Mobile menu */}
         <button
           className="md:hidden"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
           style={{ padding: 8, borderRadius: 8, background: 'transparent', border: 'none', color: 'rgb(168 162 158)', cursor: 'pointer' }}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -110,7 +112,7 @@ export default function Navbar() {
             </a>
           ))}
           <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <a href="#contact" className="btn-ghost" onClick={() => setMenuOpen(false)} style={{ textAlign: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' }}>Contact Sales</a>
+            <a href="https://wa.me/2348100000000?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20ASM" target="_blank" rel="noopener noreferrer" className="btn-ghost" onClick={() => setMenuOpen(false)} style={{ textAlign: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' }}>Contact Sales</a>
             <a href="#get-started" className="btn-primary" onClick={() => setMenuOpen(false)} style={{ textAlign: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' }}>Get Started Free</a>
           </div>
         </div>

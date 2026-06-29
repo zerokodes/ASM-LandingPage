@@ -128,14 +128,14 @@ export default function About() {
           <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'rgb(245 245 243)', letterSpacing: '-0.02em', marginBottom: '1rem' }}>
             Our mission
           </h2>
-          <p style={{ color: 'rgb(120 113 108)', lineHeight: 1.75, marginBottom: '1rem' }}>
+          <p style={{ color: 'rgb(163 158 153)', lineHeight: 1.75, marginBottom: '1rem' }}>
             Make AI-powered sales automation accessible to any business that
             sells on WhatsApp — not just corporations with technical teams.
             A sole trader and a multi-location retail chain should both be able
             to deploy an AI sales agent in under 30 minutes, at a price that
             makes sense for their market.
           </p>
-          <p style={{ color: 'rgb(120 113 108)', lineHeight: 1.75 }}>
+          <p style={{ color: 'rgb(163 158 153)', lineHeight: 1.75 }}>
             We launched in Nigeria because WhatsApp commerce is most concentrated
             here, and we know this market deeply. Global expansion follows the
             same playbook: local pricing, local payment rails, and a product shaped
@@ -190,7 +190,7 @@ export default function About() {
                   {v.icon}
                 </div>
                 <h3 style={{ color: 'rgb(245 245 243)', fontWeight: 700, fontSize: '0.9375rem', marginBottom: 8 }}>{v.title}</h3>
-                <p style={{ color: 'rgb(120 113 108)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{v.desc}</p>
+                <p style={{ color: 'rgb(163 158 153)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{v.desc}</p>
               </div>
             );
           })}
@@ -225,7 +225,7 @@ export default function About() {
                 </div>
                 <div style={{ color: 'rgb(245 245 243)', fontWeight: 700, fontSize: '1rem', marginBottom: 2 }}>{t.name}</div>
                 <div style={{ color: `rgba(${r},${g},${b},0.8)`, fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>{t.role}</div>
-                <p style={{ color: 'rgb(120 113 108)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{t.desc}</p>
+                <p style={{ color: 'rgb(163 158 153)', fontSize: '0.8125rem', lineHeight: 1.65 }}>{t.desc}</p>
               </div>
             );
           })}

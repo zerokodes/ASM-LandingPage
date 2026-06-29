@@ -1,5 +1,67 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+
+const DEMO_VIDEO_URL = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
+
+function DemoModal({ onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 999,
+        background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(6px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '1.5rem',
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          position: 'relative', width: '100%', maxWidth: 900,
+          background: 'rgb(15 13 12)', borderRadius: 16,
+          border: '1px solid rgb(41 37 36)',
+          boxShadow: '0 32px 80px rgba(0,0,0,0.7)',
+          overflow: 'hidden',
+        }}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close demo"
+          style={{
+            position: 'absolute', top: 12, right: 12, zIndex: 10,
+            width: 36, height: 36, borderRadius: '50%',
+            background: 'rgb(41 37 36)', border: 'none',
+            color: 'rgb(214 211 208)', cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}
+        >
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+        <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+          <iframe
+            src={DEMO_VIDEO_URL}
+            title="ASM Product Demo"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const METRICS = [
   { value: '3×', label: 'More conversions' },
@@ -260,11 +322,6 @@ function ChatMockup({ mobile = false }) {
         </>
       )}
 
-      <style>{`
-        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-        @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
-        @keyframes fadeSlideUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
-      `}</style>
     </div>
   );
 }
@@ -274,9 +331,13 @@ function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
 function useIsMobile(breakpoint = 767) {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= breakpoint);
   useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth <= breakpoint);
+    let timer;
+    const handler = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => setIsMobile(window.innerWidth <= breakpoint), 120);
+    };
     window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
+    return () => { window.removeEventListener('resize', handler); clearTimeout(timer); };
   }, [breakpoint]);
   return isMobile;
 }
@@ -290,6 +351,9 @@ export default function Hero() {
   const chatRef = useRef(null);
   const mobileChatRef = useRef(null);
   const isMobile = useIsMobile();
+  const [demoOpen, setDemoOpen] = useState(false);
+  const openDemo = useCallback((e) => { e.preventDefault(); setDemoOpen(true); }, []);
+  const closeDemo = useCallback(() => setDemoOpen(false), []);
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.4 });
@@ -307,6 +371,7 @@ export default function Hero() {
   }, []);
 
   return (
+    <>
     <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 64, position: 'relative', overflow: 'hidden' }}>
       {/* Subtle grid overlay */}
       <div style={{
@@ -328,16 +393,16 @@ export default function Hero() {
             </div>
 
             <h1 ref={headlineRef} style={{ opacity: 0, margin: 0, fontSize: 'clamp(2rem, 6vw, 4rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
-              <span style={{ color: 'rgb(245 245 243)' }}>Your Business,</span>
+              <span style={{ color: 'rgb(245 245 243)' }}>Replace your WhatsApp</span>
+              <br />
+              <span style={{ color: 'rgb(245 245 243)' }}>reply team with</span>
               <br />
               <span style={{ background: 'linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #a78bfa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Selling 24/7
+                AI that sells.
               </span>
-              <br />
-              <span style={{ color: 'rgb(245 245 243)' }}>on WhatsApp.</span>
             </h1>
 
-            <p ref={subRef} style={{ opacity: 0, margin: 0, fontSize: '1rem', color: 'rgb(120 113 108)', lineHeight: 1.7 }}>
+            <p ref={subRef} style={{ opacity: 0, margin: 0, fontSize: '1rem', color: 'rgb(163 158 153)', lineHeight: 1.7 }}>
               ASM turns your WhatsApp into a fully automated sales engine — answering questions,
               showcasing products, taking orders, and following up, all without lifting a finger.
             </p>
@@ -349,7 +414,7 @@ export default function Hero() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
               </a>
-              <a href="#demo" className="btn-ghost" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
+              <a href="#" onClick={openDemo} className="btn-ghost" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -373,6 +438,7 @@ export default function Hero() {
                   </div>
                 ))}
               </div>
+              <p style={{ fontSize: '0.7rem', color: 'rgb(87 83 78)', marginTop: 10 }}>avg. across customers</p>
             </div>
           </div>
 
@@ -383,5 +449,7 @@ export default function Hero() {
         </div>
       </div>
     </section>
+    {demoOpen && <DemoModal onClose={closeDemo} />}
+    </>
   );
 }

@@ -37,11 +37,11 @@ export default function HowItWorks() {
         { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
           scrollTrigger: { trigger: titleRef.current, start: 'top 80%' } }
       );
-      Array.from(stepsRef.current.children).forEach((el, i) => {
+      Array.from(stepsRef.current.children).forEach((el) => {
         gsap.fromTo(el,
-          { opacity: 0, x: i % 2 === 0 ? -30 : 30 },
-          { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out',
-            scrollTrigger: { trigger: el, start: 'top 80%' } }
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 82%' } }
         );
       });
     }, sectionRef);
@@ -92,7 +92,7 @@ export default function HowItWorks() {
               >
                 <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'rgb(96 165 250)', marginBottom: 8, letterSpacing: '0.08em', fontFamily: 'monospace' }}>STEP {s.step}</div>
                 <h3 style={{ color: 'rgb(245 245 243)', fontWeight: 700, fontSize: '1.125rem', marginBottom: 8 }}>{s.title}</h3>
-                <p style={{ color: 'rgb(120 113 108)', fontSize: '0.875rem', lineHeight: 1.65 }}>{s.desc}</p>
+                <p style={{ color: 'rgb(163 158 153)', fontSize: '0.875rem', lineHeight: 1.65 }}>{s.desc}</p>
               </div>
             </div>
           ))}

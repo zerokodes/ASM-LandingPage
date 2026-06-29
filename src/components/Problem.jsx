@@ -68,6 +68,7 @@ function PainCard({ item }) {
 
   return (
     <div
+      className="pain-card-inner"
       style={{
         width: 420,
         flexShrink: 0,
@@ -146,7 +147,7 @@ function PainCard({ item }) {
         }}>
           {item.title}
         </h3>
-        <p style={{ color: 'rgb(107 102 97)', fontSize: '0.775rem', lineHeight: 1.6 }}>
+        <p style={{ color: 'rgb(163 158 153)', fontSize: '0.8rem', lineHeight: 1.6 }}>
           {item.desc}
         </p>
       </div>
@@ -186,7 +187,7 @@ export default function Problem() {
             Running a business on WhatsApp<br />
             <span style={{ color: 'rgb(120 113 108)' }}>is exhausting.</span>
           </h2>
-          <p style={{ marginTop: '1rem', color: 'rgb(120 113 108)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>
+          <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>
             Every growing business hits this wall. Your best salespeople become
             message-answering robots. Here&apos;s the real cost.
           </p>

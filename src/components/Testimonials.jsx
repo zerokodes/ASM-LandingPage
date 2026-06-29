@@ -77,6 +77,7 @@ function TestiCard({ review }) {
 
   return (
     <div
+      className="testi-card-inner"
       style={{
         width: 310,
         flexShrink: 0,
@@ -127,7 +128,7 @@ function TestiCard({ review }) {
 
         {/* Quote */}
         <p style={{
-          color: 'rgb(205 200 195)',
+          color: 'rgb(214 211 208)',
           fontSize: '0.8375rem',
           lineHeight: 1.7,
           flex: 1,
@@ -215,7 +216,7 @@ export default function Testimonials() {
             Businesses already<br />
             <span style={{ color: 'rgb(120 113 108)' }}>running on autopilot.</span>
           </h2>
-          <p style={{ marginTop: '1rem', color: 'rgb(120 113 108)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>
+          <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>
             Real results from our early customers — the numbers businesses
             report after the first 30 days on ASM.
           </p>
@@ -249,6 +250,18 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
+        <p style={{ fontSize: '0.7rem', color: 'rgb(87 83 78)', marginTop: 10 }}>ASM customer survey, Q1 2026</p>
+      </div>
+
+      {/* CTA */}
+      <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+        <a href="#get-started" className="btn-primary" style={{ fontSize: '1rem', padding: '0.875rem 2.25rem' }}>
+          Join Them — Start Free
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <p style={{ color: 'rgb(120 113 108)', fontSize: '0.8125rem', marginTop: 10 }}>14-day free trial · No credit card required</p>
       </div>
     </section>
   );

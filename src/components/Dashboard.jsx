@@ -62,7 +62,7 @@ export default function Dashboard() {
             <br />
             <span style={{ color: 'rgb(120 113 108)' }}>WhatsApp sales machine.</span>
           </h2>
-          <p style={{ marginTop: '1rem', color: 'rgb(120 113 108)', fontSize: '1.05rem', maxWidth: 560, margin: '1rem auto 0' }}>
+          <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 560, margin: '1rem auto 0' }}>
             Monitor conversations, manage your catalog, train the AI with your knowledge,
             and track every sale — all from one clean dashboard.
           </p>
@@ -98,6 +98,7 @@ export default function Dashboard() {
               <img
                 src="/knowledge-preview.png"
                 alt="ASM Knowledge Base Dashboard"
+                loading="lazy"
                 style={{ width: '100%', display: 'block' }}
               />
             </div>
@@ -134,6 +135,7 @@ export default function Dashboard() {
               <img
                 src="/catalog-preview.png"
                 alt="ASM Catalog Dashboard"
+                loading="lazy"
                 style={{ width: '100%', display: 'block' }}
               />
             </div>
@@ -157,6 +159,16 @@ export default function Dashboard() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <a href="#get-started" className="btn-primary" style={{ fontSize: '1rem', padding: '0.875rem 2.25rem' }}>
+            Start Free Trial
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <p style={{ color: 'rgb(120 113 108)', fontSize: '0.8125rem', marginTop: 10 }}>No credit card required · 14-day free trial</p>
         </div>
       </div>
     </section>

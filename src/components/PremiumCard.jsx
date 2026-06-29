@@ -20,6 +20,7 @@ export default function PremiumCard({
 
   return (
     <div
+      className="feature-card-inner"
       style={{
         width,
         flexShrink: 0,
@@ -101,7 +102,7 @@ export default function PremiumCard({
           {title}
         </h3>
 
-        <p style={{ color: 'rgb(120 113 108)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
+        <p style={{ color: 'rgb(163 158 153)', fontSize: '0.8125rem', lineHeight: 1.65 }}>
           {desc}
         </p>
       </div>

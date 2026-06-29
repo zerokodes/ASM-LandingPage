@@ -96,7 +96,7 @@ export default function Pricing() {
             <br />
             <span style={{ color: 'rgb(120 113 108)' }}>No surprises.</span>
           </h2>
-          <p style={{ marginTop: '1rem', color: 'rgb(120 113 108)', fontSize: '1.05rem', maxWidth: 480, margin: '1rem auto 0' }}>
+          <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 480, margin: '1rem auto 0' }}>
             Start free for 14 days. No credit card required. Upgrade or cancel anytime.
           </p>
         </div>
@@ -120,10 +120,11 @@ export default function Pricing() {
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; }}
             >
               {plan.primary && (
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, rgb(37 99 235), transparent)' }}/>
-              )}
-              {plan.primary && (
-                <div style={{ position: 'absolute', top: 16, right: 16, background: 'rgb(37 99 235)', color: 'white', fontSize: '0.7rem', fontWeight: 700, padding: '3px 10px', borderRadius: 20 }}>
+                <div style={{
+                  background: 'rgb(37 99 235)', textAlign: 'center',
+                  padding: '6px 0', fontSize: '0.7rem', fontWeight: 700,
+                  color: 'white', letterSpacing: '0.05em', textTransform: 'uppercase',
+                }}>
                   Most Popular
                 </div>
               )}
@@ -135,7 +136,7 @@ export default function Pricing() {
                     <span style={{ fontSize: '2.5rem', fontWeight: 900, color: 'rgb(245 245 243)', letterSpacing: '-0.02em' }}>{plan.price}</span>
                     <span style={{ color: 'rgb(120 113 108)', fontSize: '0.875rem' }}>{plan.period}</span>
                   </div>
-                  <p style={{ color: 'rgb(120 113 108)', fontSize: '0.8125rem', marginTop: 8, lineHeight: 1.6 }}>{plan.desc}</p>
+                  <p style={{ color: 'rgb(163 158 153)', fontSize: '0.8125rem', marginTop: 8, lineHeight: 1.6 }}>{plan.desc}</p>
                 </div>
 
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1, listStyle: 'none', padding: 0, margin: 0 }}>

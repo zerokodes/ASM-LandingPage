@@ -32,25 +32,31 @@ function FAQItem({ q, a }) {
         borderRadius: 12,
         overflow: 'hidden',
         transition: 'border-color 0.2s',
-        cursor: 'pointer',
         background: open ? 'rgb(37 99 235 / 0.04)' : 'transparent',
       }}
-      onClick={() => setOpen(!open)}
     >
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 1.25rem', gap: 12 }}>
+      <button
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+        style={{
+          width: '100%', background: 'none', border: 'none', cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: '1rem 1.25rem', gap: 12, textAlign: 'left',
+        }}
+      >
         <h3 className="faq-question" style={{ color: 'rgb(245 245 243)', fontWeight: 500, fontSize: '0.9375rem', lineHeight: 1.45, margin: 0 }}>{q}</h3>
         <div ref={iconRef} style={{
-          width: 24, height: 24, borderRadius: '50%',
+          width: 44, height: 44, borderRadius: '50%',
           background: open ? 'rgb(37 99 235 / 0.15)' : 'rgb(41 37 36)',
           display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
         }}>
-          <svg width="12" height="12" fill="none" stroke={open ? 'rgb(96 165 250)' : 'rgb(120 113 108)'} strokeWidth="2.5" viewBox="0 0 24 24">
+          <svg width="12" height="12" fill="none" stroke={open ? 'rgb(96 165 250)' : 'rgb(163 158 153)'} strokeWidth="2.5" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/>
           </svg>
         </div>
-      </div>
+      </button>
       <div ref={bodyRef} style={{ height: 0, opacity: 0, overflow: 'hidden' }}>
-        <p style={{ color: 'rgb(120 113 108)', fontSize: '0.875rem', padding: '0 1.25rem 1.25rem', lineHeight: 1.7, margin: 0 }}>{a}</p>
+        <p style={{ color: 'rgb(163 158 153)', fontSize: '0.875rem', padding: '0 1.25rem 1.25rem', lineHeight: 1.7, margin: 0 }}>{a}</p>
       </div>
     </div>
   );
@@ -91,9 +97,9 @@ export default function FAQ() {
           {FAQS.map((item) => <FAQItem key={item.q} q={item.q} a={item.a} />)}
         </div>
 
-        <p style={{ textAlign: 'center', color: 'rgb(120 113 108)', fontSize: '0.875rem', marginTop: '2.5rem' }}>
+        <p style={{ textAlign: 'center', color: 'rgb(163 158 153)', fontSize: '0.875rem', marginTop: '2.5rem' }}>
           Still have questions?{' '}
-          <a href="#contact" style={{ color: 'rgb(96 165 250)', textDecoration: 'none' }}
+          <a href="https://wa.me/2348100000000?text=Hi%2C%20I%20have%20a%20question%20about%20ASM" target="_blank" rel="noopener noreferrer" style={{ color: 'rgb(96 165 250)', textDecoration: 'none' }}
             onMouseEnter={e => e.target.style.color = 'rgb(147 197 253)'}
             onMouseLeave={e => e.target.style.color = 'rgb(96 165 250)'}>
             Chat with us on WhatsApp

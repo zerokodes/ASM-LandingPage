@@ -99,7 +99,7 @@ export default function Features() {
             Everything your business needs<br />
             <span style={{ color: 'rgb(120 113 108)' }}>to sell on autopilot.</span>
           </h2>
-          <p style={{ marginTop: '1rem', color: 'rgb(120 113 108)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>
+          <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>
             ASM isn&apos;t a chatbot with pre-set replies. It&apos;s a trained sales agent that knows
             your business inside out.
           </p>
