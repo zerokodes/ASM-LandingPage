@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background-color: rgb(10 10 10); /* stone-950 */
+    color: rgb(245 245 243);         /* stone-100 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(37 99 235 / 0.08) 0%, transparent 60%);
+  }
+  #root { width: 100%; text-align: left; }
+}
+
+@layer components {
+  /* Primary: blue-600 (matches app's btn-primary) */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    background-color: rgb(37 99 235);   /* blue-600 */
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.15s;
+    box-shadow: 0 4px 20px rgba(37 99 235 / 0.25);
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+  .btn-primary:hover { background-color: rgb(29 78 216); }  /* blue-700 */
+  .btn-primary:active { transform: scale(0.97); }
+
+  /* Ghost: stone-800 border (matches app's secondary btn) */
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(68 64 60);   /* stone-700 */
+    color: rgb(214 211 208);            /* stone-400 */
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.15s;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-ghost:hover {
+    background-color: rgb(41 37 36 / 0.8);  /* stone-800 */
+    color: rgb(245 245 243);
+    border-color: rgb(68 64 60);
+  }
+  .btn-ghost:active { transform: scale(0.97); }
+
+  /* Card — matches app's card surface */
+  .card-glass {
+    background-color: rgb(28 25 23 / 0.8);  /* stone-900 */
+    border: 1px solid rgb(41 37 36);         /* stone-800 */
+    border-radius: 1rem;
+    backdrop-filter: blur(12px);
+  }
+
+  /* Section label chip */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background-color: rgb(37 99 235 / 0.12);
+    border: 1px solid rgb(37 99 235 / 0.25);
+    color: rgb(96 165 250);   /* blue-400 */
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: rgb(10 10 10); }
+::-webkit-scrollbar-thumb { background: rgb(41 37 36); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(68 64 60); }
+
+/* GSAP initial states */
+.gsap-fade-up { opacity: 0; transform: translateY(40px); }
+.gsap-fade-in { opacity: 0; }
+
+/* ─── Responsive layout helpers ───────────────────────────────────────── */
+
+/* Hero: two-column on desktop, stack on mobile */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .hero-cta-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .hero-cta-row a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dashboard: two images side by side → stack on mobile */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+@media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* About page stats grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* Pricing cards */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+}
+
+/* Values/team grids on About page */
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 900px) {
+  .card-grid-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .card-grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Feature/Problem/Testimonial scroll-hint — hide on mobile */
+@media (max-width: 600px) {
+  .marquee-scroll-hint { display: none; }
+}
+
+/* Page-level padding tightening on small screens */
+@media (max-width: 600px) {
+  .page-section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .section-pad {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Navbar mobile: ensure full-width menu items */
+@media (max-width: 767px) {
+  .mobile-menu-link {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgb(41 37 36 / 0.5);
+  }
+}
+
+/* ─── About page hero: reduce top padding on phones ─────────────────── */
+@media (max-width: 767px) {
+  .about-hero {
+    padding: 2.5rem 1.25rem 2rem !important;
+  }
+  .about-hero h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+  .about-hero p {
+    font-size: 0.9375rem !important;
+  }
+  /* Mission stats card — readable on mobile */
+  .about-stats-card {
+    padding: 1.25rem !important;
+  }
+  /* Values / Team sections */
+  .about-section {
+    padding: 2.5rem 1.25rem !important;
+  }
+  /* About CTA block */
+  .about-cta {
+    padding: 2rem 1.25rem !important;
+  }
+  .about-cta h2 {
+    font-size: 1.375rem !important;
+  }
+}
+
+/* ─── Legal pages (Privacy / Terms): tighten padding on phones ───────── */
+@media (max-width: 767px) {
+  .legal-page {
+    padding: 2rem 1.25rem 4rem !important;
+  }
+  .legal-page h1 {
+    font-size: clamp(1.5rem, 6vw, 2.25rem) !important;
+  }
+  /* Notice / warning boxes */
+  .legal-notice {
+    padding: 1rem 1rem !important;
+  }
+  /* Contact info box */
+  .legal-contact-box {
+    padding: 1rem !important;
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* ─── Card width clamp on narrow screens ─────────────────────────────── */
+/* PainCard (Problem section) — 420px wide, squishes on phone */
+@media (max-width: 480px) {
+  /* Force marquee tracks to use smaller cards via CSS variable override */
+  .pain-card-inner  { width: min(380px, 85vw) !important; }
+  .testi-card-inner { width: min(280px, 82vw) !important; }
+  .feature-card-inner { width: min(280px, 82vw) !important; }
+}
+
+/* ─── Section horizontal padding on phones ───────────────────────────── */
+@media (max-width: 480px) {
+  section { padding-left: 0 !important; padding-right: 0 !important; }
+  /* But keep inner containers padded */
+  .inner-pad { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* ─── Footer bottom strip stacks on mobile ───────────────────────────── */
+@media (max-width: 560px) {
+  .footer-bottom-strip {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}
+
+/* ─── HowItWorks step cards — tighten gap on mobile ─────────────────── */
+@media (max-width: 480px) {
+  .step-row {
+    gap: 0.875rem !important;
+  }
+  .step-icon-box {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 10px !important;
+  }
+}
+
+/* ─── Trust strip in Testimonials wraps to column on mobile ─────────── */
+@media (max-width: 480px) {
+  .trust-strip {
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 1rem !important;
+  }
+}
+
+/* ─── Hero section min-height fix — no overflow on short phones ──────── */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: unset !important;
+    padding-top: 80px !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* ─── Marquee section containers — remove padding on mobile so cards  ── */
+/* reach edge-to-edge (the fade gradient clips them cleanly)           ── */
+@media (max-width: 640px) {
+  .marquee-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* ─── Global section vertical padding reduction on mobile ────────────── */
+/* Target the named landing sections specifically (not hero, not legal pages) */
+@media (max-width: 767px) {
+  #features,
+  #how-it-works,
+  #pricing,
+  #faq,
+  #get-started {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  /* Problem, Features, Testimonials, Dashboard sections (no id) — use data attr */
+  .section-pad-lg {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+
+/* ─── FAQ question text — prevent overflow on narrow screens ─────────── */
+@media (max-width: 480px) {
+  .faq-question {
+    font-size: 0.875rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* ─── Pricing card stack on mobile — remove max-width constraint ─────── */
+@media (max-width: 640px) {
+  .pricing-grid {
+    max-width: 100% !important;
+    padding: 0 1.25rem;
+  }
+}
+
+/* ─── Dashboard highlights grid — 2-col on narrow, 1-col on tiny ─────── */
+@media (max-width: 640px) {
+  .dashboard-highlights {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media (max-width: 380px) {
+  .dashboard-highlights {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── HowItWorks max-width container — full width on mobile ──────────── */
+@media (max-width: 767px) {
+  .howitworks-steps {
+    max-width: 100% !important;
+  }
+}
