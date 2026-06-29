@@ -146,11 +146,12 @@ function AnimatedBubble({ msg, onDone }) {
 }
 
 function ChatMockup({ mobile = false }) {
-  const [visibleCount, setVisibleCount] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(mobile ? CHAT_SCRIPT.length : 0);
   const [typing, setTyping] = useState(false);
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    if (mobile) return; // static on mobile — no animation needed
     let cancelled = false;
     async function runSequence() {
       while (!cancelled) {
@@ -173,14 +174,14 @@ function ChatMockup({ mobile = false }) {
     }
     runSequence();
     return () => { cancelled = true; };
-  }, []);
+  }, [mobile]);
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [visibleCount, typing]);
 
-  const chatBodyHeight = mobile ? 220 : 360;
-  const chatBodyMin   = mobile ? 0   : 300;
+  const chatBodyHeight = mobile ? 'auto' : 360;
+  const chatBodyMin   = mobile ? 0      : 300;
 
   return (
     <div style={{ position: 'relative', maxWidth: mobile ? '100%' : 360, margin: '0 auto' }}>
@@ -241,7 +242,7 @@ function ChatMockup({ mobile = false }) {
           display: 'flex',
           flexDirection: 'column',
           gap: 8,
-          overflowY: 'auto',
+          overflowY: mobile ? 'visible' : 'auto',
         }}>
           {CHAT_SCRIPT.slice(0, visibleCount).map((msg, i) => (
             <AnimatedBubble key={i} msg={msg} />

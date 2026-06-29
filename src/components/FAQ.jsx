@@ -15,8 +15,7 @@ const FAQS = [
   { q: 'Can my staff still reply directly on WhatsApp?', a: 'Absolutely. This is a core feature. When a staff member replies from an authorized WhatsApp number, ASM detects it and steps back automatically. No mode switching needed.' },
 ];
 
-function FAQItem({ q, a }) {
-  const [open, setOpen] = useState(false);
+function FAQItem({ q, a, open, onToggle }) {
   const bodyRef = useRef(null);
   const iconRef = useRef(null);
 
@@ -37,7 +36,7 @@ function FAQItem({ q, a }) {
     >
       <button
         aria-expanded={open}
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
         style={{
           width: '100%', background: 'none', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -66,6 +65,7 @@ export default function FAQ() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const listRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -94,7 +94,15 @@ export default function FAQ() {
         </div>
 
         <div ref={listRef} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          {FAQS.map((item) => <FAQItem key={item.q} q={item.q} a={item.a} />)}
+          {FAQS.map((item, i) => (
+            <FAQItem
+              key={item.q}
+              q={item.q}
+              a={item.a}
+              open={activeIndex === i}
+              onToggle={() => setActiveIndex(activeIndex === i ? null : i)}
+            />
+          ))}
         </div>
 
         <p style={{ textAlign: 'center', color: 'rgb(163 158 153)', fontSize: '0.875rem', marginTop: '2.5rem' }}>

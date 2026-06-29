@@ -32,6 +32,8 @@ export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
+  const close = () => setMenuOpen(false);
+
   useEffect(() => {
     gsap.fromTo(navRef.current,
       { y: -60, opacity: 0 },
@@ -42,11 +44,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  /* Lock body scroll while menu is open */
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   return (
+    <>
     <nav
       ref={navRef}
       style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         transition: 'all 0.3s',
         ...(scrolled ? {
           background: 'rgb(10 10 10 / 0.92)',
@@ -60,7 +69,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
           <Logo />
-          <span style={{ fontWeight: 700, color: 'rgb(245 245 243)', fontSize: '1.05rem', letterSpacing: '-0.02em' }}>ASM</span>
+          <span style={{ fontWeight: 700, color: 'rgb(245 245 243)', fontSize: '1.05rem', letterSpacing: '-0.02em', fontFamily: "'Space Grotesk', sans-serif" }}>ASM</span>
           <span style={{ color: 'rgb(96 165 250)', fontSize: '0.75rem', fontWeight: 500 }}>Automated Sales Manager</span>
         </Link>
 
@@ -85,13 +94,13 @@ export default function Navbar() {
           <a href="#get-started" className="btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.8125rem' }}>Get Started Free</a>
         </div>
 
-        {/* Mobile menu */}
+        {/* Hamburger */}
         <button
           className="md:hidden"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
-          style={{ padding: 8, borderRadius: 8, background: 'transparent', border: 'none', color: 'rgb(168 162 158)', cursor: 'pointer' }}
-          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ padding: 8, borderRadius: 8, background: 'transparent', border: 'none', color: 'rgb(168 162 158)', cursor: 'pointer', position: 'relative', zIndex: 110 }}
+          onClick={() => setMenuOpen(o => !o)}
         >
           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {menuOpen
@@ -101,22 +110,48 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
-
-      {/* Mobile dropdown */}
-      {menuOpen && (
-        <div style={{ background: 'rgb(15 13 12 / 0.98)', backdropFilter: 'blur(20px)', borderTop: '1px solid rgb(41 37 36)', padding: '0.5rem 1.5rem 1.25rem', display: 'flex', flexDirection: 'column' }}>
-          {NAV_LINKS.map((l) => (
-            <a key={l.label} href={l.href} onClick={() => setMenuOpen(false)}
-              style={{ padding: '0.875rem 0', color: 'rgb(214 211 208)', fontWeight: 500, fontSize: '1rem', textDecoration: 'none', borderBottom: '1px solid rgb(41 37 36 / 0.4)', display: 'block' }}>
-              {l.label}
-            </a>
-          ))}
-          <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <a href="https://wa.me/2348100000000?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20ASM" target="_blank" rel="noopener noreferrer" className="btn-ghost" onClick={() => setMenuOpen(false)} style={{ textAlign: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' }}>Contact Sales</a>
-            <a href="#get-started" className="btn-primary" onClick={() => setMenuOpen(false)} style={{ textAlign: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' }}>Get Started Free</a>
-          </div>
-        </div>
-      )}
     </nav>
+
+    {/* Full-screen mobile overlay */}
+    {menuOpen && (
+      <div
+        style={{
+          position: 'fixed', inset: 0, zIndex: 99,
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          background: 'rgba(10,10,10,0.75)',
+        }}
+        onClick={close}
+        aria-hidden="true"
+      />
+    )}
+
+    {/* Slide-down nav panel — sits above the backdrop */}
+    <div
+      className="md:hidden"
+      style={{
+        position: 'fixed', top: 64, left: 0, right: 0, zIndex: 105,
+        background: 'rgb(15 13 12)',
+        borderBottom: '1px solid rgb(41 37 36)',
+        boxShadow: '0 16px 48px rgba(0,0,0,0.6)',
+        padding: '0.5rem 1.5rem 1.5rem',
+        display: 'flex', flexDirection: 'column',
+        transform: menuOpen ? 'translateY(0)' : 'translateY(-110%)',
+        transition: 'transform 0.28s cubic-bezier(0.4,0,0.2,1)',
+        pointerEvents: menuOpen ? 'auto' : 'none',
+      }}
+    >
+      {NAV_LINKS.map((l) => (
+        <a key={l.label} href={l.href} onClick={close}
+          style={{ padding: '0.9rem 0', color: 'rgb(214 211 208)', fontWeight: 500, fontSize: '1rem', textDecoration: 'none', borderBottom: '1px solid rgb(41 37 36 / 0.4)', display: 'block' }}>
+          {l.label}
+        </a>
+      ))}
+      <div style={{ paddingTop: '1rem', display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <a href="https://wa.me/2348100000000?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20ASM" target="_blank" rel="noopener noreferrer" className="btn-ghost" onClick={close} style={{ textAlign: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' }}>Contact Sales</a>
+        <a href="#get-started" className="btn-primary" onClick={close} style={{ textAlign: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' }}>Get Started Free</a>
+      </div>
+    </div>
+    </>
   );
 }

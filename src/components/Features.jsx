@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MarqueeRow from './MarqueeRow';
 import PremiumCard from './PremiumCard';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -68,7 +67,7 @@ const FEATURES = [
 export default function Features() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
-  const rowRef = useRef(null);
+  const gridRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -77,23 +76,19 @@ export default function Features() {
         { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
           scrollTrigger: { trigger: titleRef.current, start: 'top 80%' } }
       );
-      gsap.fromTo(rowRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
-          scrollTrigger: { trigger: rowRef.current, start: 'top 85%' } }
+      gsap.fromTo(Array.from(gridRef.current.children),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.45, stagger: 0.07, ease: 'power2.out',
+          scrollTrigger: { trigger: gridRef.current, start: 'top 82%' } }
       );
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
-  const cards = FEATURES.map((f, i) => (
-    <PremiumCard key={f.tag} index={i} {...f} width={330} />
-  ));
-
   return (
     <section ref={sectionRef} id="features" style={{ padding: '6rem 0', position: 'relative', background: 'rgb(28 25 23 / 0.15)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', marginBottom: '3.5rem' }}>
-        <div ref={titleRef} style={{ opacity: 0, textAlign: 'center' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
+        <div ref={titleRef} style={{ opacity: 0, textAlign: 'center', marginBottom: '3.5rem' }}>
           <span className="section-label">Features</span>
           <h2 style={{ marginTop: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'rgb(245 245 243)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
             Everything your business needs<br />
@@ -104,21 +99,12 @@ export default function Features() {
             your business inside out.
           </p>
         </div>
-      </div>
 
-      <div ref={rowRef} className="marquee-container" style={{ opacity: 0, maxWidth: 1280, margin: '0 auto', padding: '0 2rem', overflow: 'hidden' }}>
-        <MarqueeRow speed={50} gap={20}>
-          {cards}
-        </MarqueeRow>
-      </div>
-
-      {/* Scroll hint */}
-      <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-        <span style={{ color: 'rgb(87 83 78)', fontSize: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
-          Hover to pause · Scroll for more
-          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </span>
+        <div ref={gridRef} className="features-grid">
+          {FEATURES.map((f, i) => (
+            <PremiumCard key={f.tag} index={i} {...f} />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import MarqueeRow from './MarqueeRow';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,8 +69,6 @@ function PainCard({ item }) {
     <div
       className="pain-card-inner"
       style={{
-        width: 420,
-        flexShrink: 0,
         borderRadius: 14,
         overflow: 'hidden',
         display: 'flex',
@@ -158,7 +155,7 @@ function PainCard({ item }) {
 export default function Problem() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
-  const rowRef = useRef(null);
+  const gridRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -167,21 +164,19 @@ export default function Problem() {
         { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
           scrollTrigger: { trigger: titleRef.current, start: 'top 80%' } }
       );
-      gsap.fromTo(rowRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
-          scrollTrigger: { trigger: rowRef.current, start: 'top 85%' } }
+      gsap.fromTo(Array.from(gridRef.current.children),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.45, stagger: 0.08, ease: 'power2.out',
+          scrollTrigger: { trigger: gridRef.current, start: 'top 82%' } }
       );
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
-  const cards = PAINS.map(item => <PainCard key={item.title} item={item} />);
-
   return (
     <section ref={sectionRef} className="section-pad-lg" style={{ padding: '6rem 0', position: 'relative' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', marginBottom: '3.5rem' }}>
-        <div ref={titleRef} style={{ opacity: 0, textAlign: 'center' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
+        <div ref={titleRef} style={{ opacity: 0, textAlign: 'center', marginBottom: '3.5rem' }}>
           <span className="section-label">The Problem</span>
           <h2 style={{ marginTop: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'rgb(245 245 243)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
             Running a business on WhatsApp<br />
@@ -192,27 +187,17 @@ export default function Problem() {
             message-answering robots. Here&apos;s the real cost.
           </p>
         </div>
-      </div>
 
-      {/* Constrained marquee — aligns with rest of page */}
-      <div ref={rowRef} className="marquee-container" style={{ opacity: 0, maxWidth: 1280, margin: '0 auto', padding: '0 2rem', overflow: 'hidden' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <MarqueeRow speed={48} gap={16} reverse={false}>
-            {cards.slice(0, 3)}
-            {cards.slice(0, 3)}
-          </MarqueeRow>
-          <MarqueeRow speed={45} gap={16} reverse={true}>
-            {cards.slice(3)}
-            {cards.slice(3)}
-          </MarqueeRow>
+        <div ref={gridRef} className="pain-grid">
+          {PAINS.map(item => <PainCard key={item.title} item={item} />)}
         </div>
-      </div>
 
-      <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-        <p style={{ color: 'rgb(87 83 78)', fontSize: '0.875rem' }}>Sound familiar?</p>
-        <p style={{ color: 'rgb(245 245 243)', fontWeight: 700, fontSize: '1.25rem', marginTop: 8 }}>
-          There&apos;s a better way. ↓
-        </p>
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <p style={{ color: 'rgb(87 83 78)', fontSize: '0.875rem' }}>Sound familiar?</p>
+          <p style={{ color: 'rgb(245 245 243)', fontWeight: 700, fontSize: '1.25rem', marginTop: 8 }}>
+            There&apos;s a better way. ↓
+          </p>
+        </div>
       </div>
     </section>
   );

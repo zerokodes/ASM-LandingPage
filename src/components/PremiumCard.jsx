@@ -10,20 +10,17 @@ export default function PremiumCard({
   title,
   desc,
   accentColor = '#2563eb',
-  width = 300,
 }) {
   const r = parseInt(accentColor.slice(1, 3), 16);
   const g = parseInt(accentColor.slice(3, 5), 16);
   const b = parseInt(accentColor.slice(5, 7), 16);
 
-  const clipSize = 36; // px of the diagonal cut
+  const clipSize = 36;
 
   return (
     <div
       className="feature-card-inner"
       style={{
-        width,
-        flexShrink: 0,
         position: 'relative',
         // Gradient border trick: outer div is 1px "padding" with gradient bg
         padding: 1,
