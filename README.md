@@ -16,7 +16,7 @@ Marketing landing page for **ASM (Automated Sales Manager)** — a WhatsApp AI s
 
 ---
 
-## Project Structure.
+## Project Structure
 
 ```
 src/
