@@ -24,13 +24,13 @@ export default function Footer() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1rem' }}>
               <Logo />
-              <span style={{ fontWeight: 700, color: 'rgb(245 245 243)', fontSize: '1rem', letterSpacing: '-0.02em' }}>ASM</span>
+              <span style={{ fontWeight: 700, color: 'rgb(245 245 243)', fontSize: '1rem', letterSpacing: '-0.02em' }}>ChatSeller</span>
             </div>
             <p style={{ color: 'rgb(87 83 78)', fontSize: '0.875rem', lineHeight: 1.7, maxWidth: 300 }}>
-              Automated Sales Manager — turning WhatsApp into your most productive salesperson, 24/7.
+              Turning WhatsApp into your most productive salesperson, 24/7. By Apt-Intel.
             </p>
             <p style={{ color: 'rgb(68 64 60)', fontSize: '0.75rem', marginTop: '1.5rem' }}>
-              © 2026 Autopilot Sales Manager. All rights reserved.
+              © 2026 ChatSeller by Apt-Intel. All rights reserved.
             </p>
           </div>
 

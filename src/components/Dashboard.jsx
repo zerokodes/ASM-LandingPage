@@ -97,7 +97,7 @@ export default function Dashboard() {
               </div>
               <img
                 src="/knowledge-preview.png"
-                alt="ASM Knowledge Base Dashboard"
+                alt="ChatSeller Knowledge Base Dashboard"
                 loading="lazy"
                 style={{ width: '100%', display: 'block' }}
               />
@@ -134,7 +134,7 @@ export default function Dashboard() {
               </div>
               <img
                 src="/catalog-preview.png"
-                alt="ASM Catalog Dashboard"
+                alt="ChatSeller Catalog Dashboard"
                 loading="lazy"
                 style={{ width: '100%', display: 'block' }}
               />

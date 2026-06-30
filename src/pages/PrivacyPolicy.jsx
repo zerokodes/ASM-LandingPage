@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const EFFECTIVE_DATE = 'June 27, 2026';
-const COMPANY = 'Aivo Technologies';
-const EMAIL = 'privacy@aivo.dev';
-const APP_NAME = 'ASM (Automated Sales Manager)';
+const COMPANY = 'Apt-Intel';
+const EMAIL = 'privacy@chatseller.dev';
+const APP_NAME = 'ChatSeller';
 
 function Section({ title, children }) {
   return (
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
 
         <Section title="2. Information We Collect">
           <P><strong style={{ color: 'rgb(214 211 208)' }}>2.1 Business Account Information</strong></P>
-          <P>When you register as a business on ASM, we collect:</P>
+          <P>When you register as a business on ChatSeller, we collect:</P>
           <UL items={[
             'Business name, email address, and contact phone number',
             'WhatsApp Business Account credentials (access tokens stored encrypted)',
@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
 
           <P><strong style={{ color: 'rgb(214 211 208)' }}>2.2 Customer Conversation Data</strong></P>
           <P>
-            When your customers message your WhatsApp Business number connected to ASM, we process:
+            When your customers message your WhatsApp Business number connected to ChatSeller, we process:
           </P>
           <UL items={[
             'The customer\'s WhatsApp phone number (as provided by Meta\'s WhatsApp Business API)',
@@ -153,12 +153,12 @@ export default function PrivacyPolicy() {
         <Section title="3. How We Use Your Information">
           <P>We use the data we collect to:</P>
           <UL items={[
-            'Operate the ASM platform and deliver AI-powered responses to your customers',
+            'Operate the ChatSeller platform and deliver AI-powered responses to your customers',
             'Train and maintain the AI models that power your business\'s knowledge base and catalog retrieval',
             'Send you operational notifications (e.g., new orders, AI escalation alerts) via WhatsApp',
             'Process billing and manage your subscription',
             'Detect and prevent abuse, fraud, and policy violations',
-            'Improve ASM\'s AI accuracy and response quality across the platform',
+            'Improve ChatSeller\'s AI accuracy and response quality across the platform',
             'Comply with legal obligations, including requests from regulatory authorities',
           ]}/>
           <P>
@@ -170,17 +170,17 @@ export default function PrivacyPolicy() {
 
         <Section title="4. WhatsApp Business Platform">
           <P>
-            ASM is built on the WhatsApp Business Platform (Cloud API), provided by
-            Meta Platforms Ireland Limited. To use ASM, you must have an approved WhatsApp
+            ChatSeller is built on the WhatsApp Business Platform (Cloud API), provided by
+            Meta Platforms Ireland Limited. To use ChatSeller, you must have an approved WhatsApp
             Business Account and agree to Meta&apos;s WhatsApp Business Terms of Service.
           </P>
           <P>
-            When messages are exchanged through ASM:
+            When messages are exchanged through ChatSeller:
           </P>
           <UL items={[
-            'Messages are transmitted through Meta\'s infrastructure before reaching ASM\'s servers',
+            'Messages are transmitted through Meta\'s infrastructure before reaching ChatSeller\'s servers',
             'Meta may retain message metadata in accordance with their own privacy policy',
-            'ASM receives message content via webhook from Meta\'s Cloud API',
+            'ChatSeller receives message content via webhook from Meta\'s Cloud API',
             'We store message content on our servers (MongoDB Atlas, hosted in Ireland/EU) for conversation continuity and analytics',
           ]}/>
           <P>
@@ -192,7 +192,7 @@ export default function PrivacyPolicy() {
             <a href="https://www.whatsapp.com/legal/commerce-policy/" target="_blank" rel="noreferrer" style={{ color: 'rgb(96 165 250)' }}>
               Commerce Policy
             </a>.
-            ASM is not responsible for your compliance with these policies.
+            ChatSeller is not responsible for your compliance with these policies.
           </P>
         </Section>
 
@@ -210,7 +210,7 @@ export default function PrivacyPolicy() {
           ]}/>
           <P>
             Despite these measures, no system is completely secure. We encourage you to use
-            strong, unique passwords for your ASM dashboard account.
+            strong, unique passwords for your ChatSeller dashboard account.
           </P>
         </Section>
 
@@ -225,7 +225,7 @@ export default function PrivacyPolicy() {
         </Section>
 
         <Section title="7. Third-Party Services">
-          <P>ASM integrates with the following third-party services, each with their own privacy policies:</P>
+          <P>ChatSeller integrates with the following third-party services, each with their own privacy policies:</P>
           <UL items={[
             'Meta / WhatsApp Business API — message delivery infrastructure',
             'MongoDB Atlas — primary database (EU region)',
@@ -254,9 +254,9 @@ export default function PrivacyPolicy() {
 
         <Section title="9. Children's Privacy">
           <P>
-            ASM is a B2B platform intended for use by registered businesses. We do not
+            ChatSeller is a B2B platform intended for use by registered businesses. We do not
             knowingly collect information from individuals under the age of 18. If you
-            believe a minor has used your business&apos;s ASM-connected WhatsApp number
+            believe a minor has used your business&apos;s ChatSeller-connected WhatsApp number
             to interact with the AI, please contact us and we will delete the relevant records.
           </P>
         </Section>
@@ -265,7 +265,7 @@ export default function PrivacyPolicy() {
           <P>
             We may update this Privacy Policy from time to time. We will notify you of
             material changes via email and/or a notice on your dashboard. Continued use
-            of ASM after a change constitutes acceptance of the updated policy.
+            of ChatSeller after a change constitutes acceptance of the updated policy.
             The effective date at the top of this page always reflects the current version.
           </P>
         </Section>
@@ -286,7 +286,7 @@ export default function PrivacyPolicy() {
 
         <div style={{ borderTop: '1px solid rgb(41 37 36)', paddingTop: '2rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
           <Link to="/terms-of-service" style={{ color: 'rgb(96 165 250)', fontSize: '0.875rem', textDecoration: 'none' }}>Terms of Service →</Link>
-          <Link to="/about" style={{ color: 'rgb(96 165 250)', fontSize: '0.875rem', textDecoration: 'none' }}>About ASM →</Link>
+          <Link to="/about" style={{ color: 'rgb(96 165 250)', fontSize: '0.875rem', textDecoration: 'none' }}>About ChatSeller →</Link>
         </div>
       </div>
     </div>

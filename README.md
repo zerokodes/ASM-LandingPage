@@ -1,6 +1,6 @@
-# ASM — Automated Sales Manager · Landing Page
+# ChatSeller — Landing Page
 
-Marketing landing page for **ASM (Automated Sales Manager)** — a WhatsApp AI sales automation platform that turns your WhatsApp Business number into a 24/7 automated sales engine.
+Marketing landing page for **ChatSeller**, by **Apt-Intel** — a WhatsApp AI sales automation platform that turns your WhatsApp Business number into a 24/7 automated sales engine.
 
 ---
 
@@ -79,7 +79,7 @@ npm run preview
 | Route | Component |
 |---|---|
 | `/` | Full landing page (all sections) |
-| `/about` | About ASM |
+| `/about` | About ChatSeller |
 | `/privacy-policy` | Privacy Policy |
 | `/terms-of-service` | Terms of Service |
 

@@ -5,14 +5,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const FAQS = [
-  { q: 'Do I need a developer to set up ASM?', a: 'No. Setup is fully self-service — you connect your WhatsApp Business API number through our guided onboarding, upload your catalog and knowledge base, and you\'re live. No coding required.' },
-  { q: 'How is this different from WhatsApp Business App?', a: 'The standard WhatsApp Business App requires you or your staff to manually respond to every message. ASM uses AI to respond intelligently and automatically, 24/7, based on your actual business knowledge — and only involves staff when you want.' },
-  { q: 'Can the AI handle order placement and tracking?', a: 'Yes. ASM can walk customers through selecting products, confirm details, log orders in your system, and send confirmation messages. Order status inquiries are handled automatically too.' },
-  { q: 'What happens when a customer asks something the AI can\'t answer?', a: 'ASM sends you a notification on WhatsApp so you or your staff can take over. You can also configure it to escalate specific keywords or question types to a human automatically.' },
-  { q: 'Is my customer data safe?', a: 'Yes. All conversation data is encrypted in transit and at rest. We never share your data with third parties. ASM processes messages on your behalf but you remain the data controller.' },
-  { q: 'Can I use ASM for multiple businesses or locations?', a: 'Yes. Our Growth and Enterprise plans support multiple WhatsApp numbers. The Enterprise plan includes full multi-tenant management for agencies handling multiple brands.' },
-  { q: 'What AI model powers ASM?', a: 'ASM uses a combination of large language models and retrieval-augmented generation (RAG) to ensure answers come from your actual business knowledge, not generic AI hallucinations.' },
-  { q: 'Can my staff still reply directly on WhatsApp?', a: 'Absolutely. This is a core feature. When a staff member replies from an authorized WhatsApp number, ASM detects it and steps back automatically. No mode switching needed.' },
+  { q: 'Do I need a developer to set up ChatSeller?', a: 'No. Setup is fully self-service — you connect your WhatsApp Business API number through our guided onboarding, upload your catalog and knowledge base, and you\'re live. No coding required.' },
+  { q: 'How is this different from WhatsApp Business App?', a: 'The standard WhatsApp Business App requires you or your staff to manually respond to every message. ChatSeller uses AI to respond intelligently and automatically, 24/7, based on your actual business knowledge — and only involves staff when you want.' },
+  { q: 'Can the AI handle order placement and tracking?', a: 'Yes. ChatSeller can walk customers through selecting products, confirm details, log orders in your system, and send confirmation messages. Order status inquiries are handled automatically too.' },
+  { q: 'What happens when a customer asks something the AI can\'t answer?', a: 'ChatSeller sends you a notification on WhatsApp so you or your staff can take over. You can also configure it to escalate specific keywords or question types to a human automatically.' },
+  { q: 'Is my customer data safe?', a: 'Yes. All conversation data is encrypted in transit and at rest. We never share your data with third parties. ChatSeller processes messages on your behalf but you remain the data controller.' },
+  { q: 'Can I use ChatSeller for multiple businesses or locations?', a: 'Yes. Our Growth and Enterprise plans support multiple WhatsApp numbers. The Enterprise plan includes full multi-tenant management for agencies handling multiple brands.' },
+  { q: 'What AI model powers ChatSeller?', a: 'ChatSeller uses a combination of large language models and retrieval-augmented generation (RAG) to ensure answers come from your actual business knowledge, not generic AI hallucinations.' },
+  { q: 'Can my staff still reply directly on WhatsApp?', a: 'Absolutely. This is a core feature. When a staff member replies from an authorized WhatsApp number, ChatSeller detects it and steps back automatically. No mode switching needed.' },
 ];
 
 function FAQItem({ q, a, open, onToggle }) {
@@ -107,7 +107,7 @@ export default function FAQ() {
 
         <p style={{ textAlign: 'center', color: 'rgb(163 158 153)', fontSize: '0.875rem', marginTop: '2.5rem' }}>
           Still have questions?{' '}
-          <a href="https://wa.me/2348100000000?text=Hi%2C%20I%20have%20a%20question%20about%20ASM" target="_blank" rel="noopener noreferrer" style={{ color: 'rgb(96 165 250)', textDecoration: 'none' }}
+          <a href="https://wa.me/2348100000000?text=Hi%2C%20I%20have%20a%20question%20about%20ChatSeller" target="_blank" rel="noopener noreferrer" style={{ color: 'rgb(96 165 250)', textDecoration: 'none' }}
             onMouseEnter={e => e.target.style.color = 'rgb(147 197 253)'}
             onMouseLeave={e => e.target.style.color = 'rgb(96 165 250)'}>
             Chat with us on WhatsApp

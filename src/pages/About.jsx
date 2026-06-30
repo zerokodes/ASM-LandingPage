@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 const TEAM = [
   {
-    name: 'Aivo Engineering',
+    name: 'ChatSeller Engineering',
     role: 'Product & Engineering',
-    desc: 'A team of engineers building the automation layer that powers ASM — from WhatsApp webhook handling to real-time AI inference.',
+    desc: 'A team of engineers building the automation layer that powers ChatSeller — from WhatsApp webhook handling to real-time AI inference.',
     accent: '#60a5fa',
-    initials: 'AE',
+    initials: 'CE',
   },
   {
     name: 'AI Research',
     role: 'Language & Compliance',
-    desc: 'Responsible for the guardrail layer that keeps ASM on-topic, factually grounded in your catalog, and free from hallucinated responses.',
+    desc: 'Responsible for the guardrail layer that keeps ChatSeller on-topic, factually grounded in your catalog, and free from hallucinated responses.',
     accent: '#818cf8',
     initials: 'AI',
   },
@@ -33,7 +33,7 @@ const VALUES = [
       </svg>
     ),
     title: 'Trust through transparency',
-    desc: 'We never hide that your customers are talking to AI. ASM is configured to be honest about its nature when asked directly.',
+    desc: 'We never hide that your customers are talking to AI. ChatSeller is configured to be honest about its nature when asked directly.',
     accent: '#60a5fa',
   },
   {
@@ -69,7 +69,7 @@ const VALUES = [
 ];
 
 const STATS = [
-  { num: '500+', label: 'Businesses using ASM today' },
+  { num: '500+', label: 'Businesses using ChatSeller today' },
   { num: '2M+',  label: 'AI conversations handled' },
   { num: '$2M+', label: 'In sales facilitated' },
   { num: '98%',  label: 'Customer retention rate' },
@@ -99,7 +99,7 @@ export default function About() {
           color: 'rgb(96 165 250)', fontSize: '0.75rem', fontWeight: 700,
           letterSpacing: '0.08em', textTransform: 'uppercase',
           padding: '4px 12px', borderRadius: 20, marginBottom: '1.5rem',
-        }}>About ASM</span>
+        }}>About ChatSeller</span>
 
         <h1 style={{
           fontSize: 'clamp(1.9rem, 5vw, 3.5rem)', fontWeight: 900,
@@ -111,7 +111,7 @@ export default function About() {
         </h1>
 
         <p style={{ color: 'rgb(163 158 153)', fontSize: '1rem', lineHeight: 1.75, maxWidth: 620 }}>
-          ASM (Automated Sales Manager) was built on a simple observation:
+          ChatSeller, built by Apt-Intel, was built on a simple observation:
           WhatsApp is the world&apos;s most used commerce channel, but it scales terribly.
           The moment a business grows past a few hundred customers, WhatsApp
           becomes a liability — staff are overwhelmed, leads go cold, and

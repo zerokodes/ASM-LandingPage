@@ -10,7 +10,7 @@ const REVIEWS = [
     name: 'Adaeze Okonkwo',
     role: 'Owner, FreshMart Lagos',
     avatar: 'AO',
-    quote: 'Before ASM I was answering WhatsApp from 6am to midnight. Now my AI handles 90% of inquiries automatically and I actually sleep.',
+    quote: 'Before ChatSeller I was answering WhatsApp from 6am to midnight. Now my AI handles 90% of inquiries automatically and I actually sleep.',
     metric: '90%',
     metricLabel: 'fewer manual replies',
     accent: '#34d399',
@@ -19,7 +19,7 @@ const REVIEWS = [
     name: 'Emeka Nwosu',
     role: 'CEO, QuickDeliver NG',
     avatar: 'EN',
-    quote: "Our order volume grew 3x after the first month. ASM handles customers while we focus on fulfilment. It's like hiring a top salesperson who never sleeps.",
+    quote: "Our order volume grew 3x after the first month. ChatSeller handles customers while we focus on fulfilment. It's like hiring a top salesperson who never sleeps.",
     metric: '3×',
     metricLabel: 'order growth in 30 days',
     accent: '#60a5fa',
@@ -37,7 +37,7 @@ const REVIEWS = [
     name: 'Olumide Adeyemi',
     role: 'Director, TechGear Store',
     avatar: 'OA',
-    quote: 'The knowledge base feature is incredible. I uploaded our full product catalog and ASM started giving accurate technical answers immediately. No training needed.',
+    quote: 'The knowledge base feature is incredible. I uploaded our full product catalog and ChatSeller started giving accurate technical answers immediately. No training needed.',
     metric: '0hrs',
     metricLabel: 'training time required',
     accent: '#818cf8',
@@ -46,7 +46,7 @@ const REVIEWS = [
     name: 'Chioma Ezeh',
     role: "MD, Mama's Kitchen Catering",
     avatar: 'CE',
-    quote: 'We handle 200+ orders per week entirely through WhatsApp now. ASM logs everything, sends confirmations, and alerts us only for edge cases. It runs itself.',
+    quote: 'We handle 200+ orders per week entirely through WhatsApp now. ChatSeller logs everything, sends confirmations, and alerts us only for edge cases. It runs itself.',
     metric: '200+',
     metricLabel: 'orders weekly, automated',
     accent: '#fb923c',
@@ -55,7 +55,7 @@ const REVIEWS = [
     name: 'Babatunde Lawal',
     role: 'GM, Lawal Agro Supplies',
     avatar: 'BL',
-    quote: 'We operate across 4 states and staff overhead for WhatsApp was killing us. ASM standardized everything — same quality response whether Abuja or Port Harcourt.',
+    quote: 'We operate across 4 states and staff overhead for WhatsApp was killing us. ChatSeller standardized everything — same quality response whether Abuja or Port Harcourt.',
     metric: '4',
     metricLabel: 'states, one AI agent',
     accent: '#ec4899',
@@ -218,7 +218,7 @@ export default function Testimonials() {
           </h2>
           <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>
             Real results from our early customers — the numbers businesses
-            report after the first 30 days on ASM.
+            report after the first 30 days on ChatSeller.
           </p>
         </div>
       </div>
@@ -250,7 +250,7 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-        <p style={{ fontSize: '0.7rem', color: 'rgb(87 83 78)', marginTop: 10 }}>ASM customer survey, Q1 2026</p>
+        <p style={{ fontSize: '0.7rem', color: 'rgb(87 83 78)', marginTop: 10 }}>ChatSeller customer survey, Q1 2026</p>
       </div>
 
       {/* CTA */}

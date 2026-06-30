@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const EFFECTIVE_DATE = 'June 27, 2026';
-const COMPANY = 'Aivo Technologies';
-const EMAIL = 'legal@aivo.dev';
-const APP_NAME = 'ASM (Automated Sales Manager)';
+const COMPANY = 'Apt-Intel';
+const EMAIL = 'legal@chatseller.dev';
+const APP_NAME = 'ChatSeller';
 
 function Section({ title, children }) {
   return (
@@ -99,7 +99,7 @@ export default function TermsOfService() {
         <Section title="1. Acceptance of Terms">
           <P>
             These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between
-            you (&quot;Business&quot; or &quot;you&quot;) and {COMPANY} (&quot;ASM&quot;, &quot;we&quot;, &quot;us&quot;) governing
+            you (&quot;Business&quot; or &quot;you&quot;) and {COMPANY} (&quot;ChatSeller&quot;, &quot;we&quot;, &quot;us&quot;) governing
             your access to and use of the {APP_NAME} platform, including all associated
             software, APIs, dashboards, and WhatsApp-integrated features.
           </P>
@@ -112,7 +112,7 @@ export default function TermsOfService() {
         </Section>
 
         <Section title="2. Eligibility">
-          <P>To use ASM, you must:</P>
+          <P>To use ChatSeller, you must:</P>
           <UL items={[
             'Be a registered business entity or individual trading legally in any supported jurisdiction',
             'Have a valid WhatsApp Business Account approved by Meta Platforms',
@@ -124,8 +124,8 @@ export default function TermsOfService() {
 
         <Section title="3. WhatsApp Business Platform Compliance">
           <P>
-            ASM is an independent service built on Meta&apos;s WhatsApp Business Platform.
-            Your use of ASM for WhatsApp messaging is subject to:
+            ChatSeller is an independent service built on Meta&apos;s WhatsApp Business Platform.
+            Your use of ChatSeller for WhatsApp messaging is subject to:
           </P>
           <UL items={[
             <span key="a"><a href="https://www.whatsapp.com/legal/business-policy/" target="_blank" rel="noreferrer" style={{ color: 'rgb(96 165 250)' }}>WhatsApp Business Policy</a></span>,
@@ -134,18 +134,18 @@ export default function TermsOfService() {
             'Meta\'s Messaging Guidelines and template approval requirements',
           ]}/>
           <P>
-            You are solely responsible for ensuring your use of WhatsApp through ASM complies
+            You are solely responsible for ensuring your use of WhatsApp through ChatSeller complies
             with all Meta policies. Violations of Meta&apos;s policies may result in suspension
-            of your WhatsApp Business Account by Meta, independent of any action by ASM.
+            of your WhatsApp Business Account by Meta, independent of any action by ChatSeller.
           </P>
           <P>
-            You agree not to use ASM to send spam, unsolicited bulk messages, or messages
+            You agree not to use ChatSeller to send spam, unsolicited bulk messages, or messages
             to users who have not opted in to receive communications from your business.
           </P>
         </Section>
 
         <Section title="4. Permitted Use">
-          <P>You may use ASM to:</P>
+          <P>You may use ChatSeller to:</P>
           <UL items={[
             'Automate customer inquiry responses for your registered business',
             'Manage and display your product catalog to customers via WhatsApp',
@@ -155,13 +155,13 @@ export default function TermsOfService() {
             'Manage staff access to conversations through role-based permissions',
           ]}/>
 
-          <P>You may <strong style={{ color: 'rgb(245 245 243)' }}>not</strong> use ASM to:</P>
+          <P>You may <strong style={{ color: 'rgb(245 245 243)' }}>not</strong> use ChatSeller to:</P>
           <UL items={[
             'Send promotional messages to users who have not consented to receive them',
             'Impersonate another business or individual',
             'Engage in any illegal activity including fraud, phishing, or money laundering',
-            'Resell, sublicense, or white-label the ASM platform without written permission',
-            'Attempt to reverse-engineer, decompile, or extract ASM\'s source code or AI models',
+            'Resell, sublicense, or white-label the ChatSeller platform without written permission',
+            'Attempt to reverse-engineer, decompile, or extract ChatSeller\'s source code or AI models',
             'Exceed your plan\'s usage limits through automation or API abuse',
             'Use the platform for any purpose that violates WhatsApp\'s Business or Commerce Policy',
           ]}/>
@@ -169,13 +169,13 @@ export default function TermsOfService() {
 
         <Section title="5. Account Responsibilities">
           <P>
-            You are responsible for maintaining the confidentiality of your ASM dashboard
+            You are responsible for maintaining the confidentiality of your ChatSeller dashboard
             credentials and WhatsApp Business access tokens. You must immediately notify us
             at <a href={`mailto:${EMAIL}`} style={{ color: 'rgb(96 165 250)' }}>{EMAIL}</a> of
             any unauthorised access to your account.
           </P>
           <P>
-            All activity occurring under your account is your responsibility. ASM is not
+            All activity occurring under your account is your responsibility. ChatSeller is not
             liable for losses resulting from compromised credentials where the breach
             was not caused by our systems.
           </P>
@@ -183,21 +183,21 @@ export default function TermsOfService() {
 
         <Section title="6. AI-Generated Content">
           <P>
-            ASM uses large language models (LLMs) and retrieval-augmented generation (RAG)
+            ChatSeller uses large language models (LLMs) and retrieval-augmented generation (RAG)
             to produce responses on behalf of your business. You acknowledge that:
           </P>
           <UL items={[
             'AI-generated responses may occasionally be inaccurate, incomplete, or inappropriate despite guardrails',
             'You are responsible for reviewing and configuring your knowledge base to minimise incorrect responses',
-            'You are ultimately responsible for all communications sent from your WhatsApp Business number, including those generated by ASM',
-            'ASM\'s compliance guardrail is designed to limit off-topic responses, but it does not guarantee perfect accuracy',
+            'You are ultimately responsible for all communications sent from your WhatsApp Business number, including those generated by ChatSeller',
+            'ChatSeller\'s compliance guardrail is designed to limit off-topic responses, but it does not guarantee perfect accuracy',
             'You should test AI responses on your catalog and FAQs before going live with customers',
           ]}/>
         </Section>
 
         <Section title="7. Subscription and Payment">
           <P>
-            ASM is offered on a subscription basis. Subscription plans, pricing,
+            ChatSeller is offered on a subscription basis. Subscription plans, pricing,
             and feature limits are displayed on our pricing page and may be updated with
             30 days&apos; notice to existing subscribers. Prices are shown in the local
             currency of your market where available.
@@ -206,14 +206,14 @@ export default function TermsOfService() {
             'Subscriptions are billed on the cycle chosen at sign-up (monthly or annual)',
             'Annual subscriptions may be paid offline to your account manager',
             'Where Paystack is used, payments are subject to Paystack\'s terms and applicable card/bank charges',
-            'Refunds are available within 7 days of a new subscription if ASM is unable to deliver the core service (AI responses via WhatsApp)',
+            'Refunds are available within 7 days of a new subscription if ChatSeller is unable to deliver the core service (AI responses via WhatsApp)',
             'Unused portions of a billing period are non-refundable on cancellation',
           ]}/>
         </Section>
 
         <Section title="8. Service Availability">
           <P>
-            We target 99.5% uptime for the ASM platform, excluding scheduled maintenance
+            We target 99.5% uptime for the ChatSeller platform, excluding scheduled maintenance
             and events outside our control (including WhatsApp API downtime, Meta outages,
             or force majeure events). We are not liable for losses resulting from service
             interruptions caused by third-party infrastructure.
@@ -232,8 +232,8 @@ export default function TermsOfService() {
             own business purposes only.
           </P>
           <P>
-            You retain ownership of all content you upload to ASM (catalog data, knowledge
-            base documents, business information). By uploading content, you grant ASM a
+            You retain ownership of all content you upload to ChatSeller (catalog data, knowledge
+            base documents, business information). By uploading content, you grant ChatSeller a
             licence to process and use that content solely to deliver the service to your business.
           </P>
         </Section>
@@ -262,11 +262,11 @@ export default function TermsOfService() {
             To the maximum extent permitted by law, {COMPANY} shall not be liable for any
             indirect, incidental, special, consequential, or punitive damages, including but
             not limited to: loss of revenue, loss of customers, or damage to reputation
-            arising from your use of ASM or from any AI-generated response sent to your customers.
+            arising from your use of ChatSeller or from any AI-generated response sent to your customers.
           </P>
           <P>
             Our total liability to you for any claim arising out of or relating to these Terms
-            or the platform shall not exceed the total fees paid by you to ASM in the 3 months
+            or the platform shall not exceed the total fees paid by you to ChatSeller in the 3 months
             preceding the claim.
           </P>
         </Section>
@@ -284,7 +284,7 @@ export default function TermsOfService() {
           <P>
             We may update these Terms from time to time. Material changes will be communicated
             via email or dashboard notice at least 14 days before they take effect for
-            existing subscribers. Continued use of ASM after that date constitutes acceptance
+            existing subscribers. Continued use of ChatSeller after that date constitutes acceptance
             of the updated Terms.
           </P>
         </Section>
@@ -304,7 +304,7 @@ export default function TermsOfService() {
 
         <div style={{ borderTop: '1px solid rgb(41 37 36)', paddingTop: '2rem', display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
           <Link to="/privacy-policy" style={{ color: 'rgb(96 165 250)', fontSize: '0.875rem', textDecoration: 'none' }}>Privacy Policy →</Link>
-          <Link to="/about" style={{ color: 'rgb(96 165 250)', fontSize: '0.875rem', textDecoration: 'none' }}>About ASM →</Link>
+          <Link to="/about" style={{ color: 'rgb(96 165 250)', fontSize: '0.875rem', textDecoration: 'none' }}>About ChatSeller →</Link>
         </div>
       </div>
     </div>

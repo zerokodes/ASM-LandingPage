@@ -52,7 +52,7 @@ function DemoModal({ onClose }) {
         <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
           <iframe
             src={DEMO_VIDEO_URL}
-            title="ASM Product Demo"
+            title="ChatSeller Product Demo"
             allow="autoplay; fullscreen"
             allowFullScreen
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
@@ -128,7 +128,7 @@ function AnimatedBubble({ msg, onDone }) {
       }}>
         {!isCustomer && (
           <div style={{ color: '#60a5fa', fontSize: '0.7rem', fontWeight: 600, marginBottom: 4 }}>
-            ASM · AI Agent
+            ChatSeller · AI Agent
           </div>
         )}
         {displayed}
@@ -211,7 +211,7 @@ function ChatMockup({ mobile = false }) {
             fontWeight: 700, color: 'white', fontSize: '0.85rem', flexShrink: 0,
           }}>A</div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ color: 'white', fontWeight: 600, fontSize: '0.8125rem' }}>ASM Assistant</div>
+            <div style={{ color: 'white', fontWeight: 600, fontSize: '0.8125rem' }}>ChatSeller Assistant</div>
             <div style={{ color: '#a7f3d0', fontSize: '0.65rem' }}>Online · AI Powered</div>
           </div>
           {/* Inline badge strip — only on mobile, replaces floating badges */}
@@ -291,7 +291,7 @@ function ChatMockup({ mobile = false }) {
               <span style={{ fontSize: '1rem' }}>🛒</span>
               <span style={{ fontWeight: 700, color: 'white', fontSize: '0.8rem' }}>+12 orders today</span>
             </div>
-            <span style={{ fontSize: '0.7rem', color: 'rgb(87 83 78)' }}>Powered by ASM AI</span>
+            <span style={{ fontSize: '0.7rem', color: 'rgb(87 83 78)' }}>Powered by ChatSeller AI</span>
           </div>
         )}
       </div>
@@ -404,7 +404,7 @@ export default function Hero() {
             </h1>
 
             <p ref={subRef} style={{ opacity: 0, margin: 0, fontSize: '1rem', color: 'rgb(163 158 153)', lineHeight: 1.7 }}>
-              ASM turns your WhatsApp into a fully automated sales engine — answering questions,
+              ChatSeller turns your WhatsApp into a fully automated sales engine — answering questions,
               showcasing products, taking orders, and following up, all without lifting a finger.
             </p>
 

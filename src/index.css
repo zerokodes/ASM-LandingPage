@@ -237,6 +237,20 @@
   }
 }
 
+/* Navbar responsive layout — no display on inline styles, all controlled here */
+.nav-link-item { display: inline-flex; }
+.nav-ctas      { display: flex; }
+.nav-hamburger { display: none; }
+
+.nav-mobile-panel { display: none; }
+
+@media (max-width: 767px) {
+  .nav-link-item { display: none; }
+  .nav-ctas      { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile-panel { display: flex; }
+}
+
 /* Navbar mobile: ensure full-width menu items */
 @media (max-width: 767px) {
   .mobile-menu-link {

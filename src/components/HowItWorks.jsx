@@ -14,12 +14,12 @@ const STEPS = [
   {
     step: '02',
     title: 'Upload your catalog and knowledge',
-    desc: 'Add your products, prices, images, and business information. Upload PDFs, paste FAQs, or point us to your website. ASM learns from all of it.',
+    desc: 'Add your products, prices, images, and business information. Upload PDFs, paste FAQs, or point us to your website. ChatSeller learns from all of it.',
     icon: <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>,
   },
   {
     step: '03',
-    title: 'ASM starts selling — you review and refine',
+    title: 'ChatSeller starts selling — you review and refine',
     desc: 'Go live in minutes. Monitor conversations from your dashboard, see what questions come up most, and refine your knowledge base anytime.',
     icon: <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}/></svg>,
   },
