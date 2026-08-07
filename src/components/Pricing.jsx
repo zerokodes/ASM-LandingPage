@@ -9,11 +9,11 @@ const PLANS = [
     name: 'Starter',
     price: '₦29,900',
     period: '/month',
-    desc: 'Perfect for small businesses just getting started with WhatsApp automation.',
+    desc: 'Perfect for small businesses just getting started with AI chat automation.',
     cta: 'Start Free Trial',
     primary: false,
     features: [
-      '1 WhatsApp Business number',
+      '1 chat link',
       'Up to 500 AI conversations/mo',
       'Product catalog (up to 50 items)',
       'FAQ & knowledge base',
@@ -29,7 +29,7 @@ const PLANS = [
     cta: 'Start Free Trial',
     primary: true,
     features: [
-      '3 WhatsApp Business numbers',
+      '3 chat links',
       'Up to 3,000 AI conversations/mo',
       'Unlimited catalog items',
       'PDF & URL knowledge ingestion',
@@ -46,7 +46,7 @@ const PLANS = [
     cta: 'Contact Sales',
     primary: false,
     features: [
-      'Unlimited WhatsApp numbers',
+      'Unlimited chat links',
       'Unlimited conversations',
       'Multi-tenant management',
       'Custom AI training',

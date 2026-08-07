@@ -5,14 +5,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const FAQS = [
-  { q: 'Do I need a developer to set up ChatSeller?', a: 'No. Setup is fully self-service — you connect your WhatsApp Business API number through our guided onboarding, upload your catalog and knowledge base, and you\'re live. No coding required.' },
-  { q: 'How is this different from WhatsApp Business App?', a: 'The standard WhatsApp Business App requires you or your staff to manually respond to every message. ChatSeller uses AI to respond intelligently and automatically, 24/7, based on your actual business knowledge — and only involves staff when you want.' },
+  { q: 'Do I need a developer to set up ChatSeller?', a: 'No. Setup is fully self-service — sign up, get your shareable chat link through our guided onboarding, upload your catalog and knowledge base, and you\'re live. No coding required.' },
+  { q: 'How is this different from a regular live chat widget?', a: 'A regular live chat widget just routes messages to a human. ChatSeller uses AI to respond intelligently and automatically, 24/7, based on your actual business knowledge — and only involves staff when you want.' },
   { q: 'Can the AI handle order placement and tracking?', a: 'Yes. ChatSeller can walk customers through selecting products, confirm details, log orders in your system, and send confirmation messages. Order status inquiries are handled automatically too.' },
-  { q: 'What happens when a customer asks something the AI can\'t answer?', a: 'ChatSeller sends you a notification on WhatsApp so you or your staff can take over. You can also configure it to escalate specific keywords or question types to a human automatically.' },
+  { q: 'What happens when a customer asks something the AI can\'t answer?', a: 'ChatSeller notifies you by email and in your dashboard so you or your staff can take over. You can also configure it to escalate specific keywords or question types to a human automatically.' },
   { q: 'Is my customer data safe?', a: 'Yes. All conversation data is encrypted in transit and at rest. We never share your data with third parties. ChatSeller processes messages on your behalf but you remain the data controller.' },
-  { q: 'Can I use ChatSeller for multiple businesses or locations?', a: 'Yes. Our Growth and Enterprise plans support multiple WhatsApp numbers. The Enterprise plan includes full multi-tenant management for agencies handling multiple brands.' },
+  { q: 'Can I use ChatSeller for multiple businesses or locations?', a: 'Yes. Our Growth and Enterprise plans support multiple chat links. The Enterprise plan includes full multi-tenant management for agencies handling multiple brands.' },
   { q: 'What AI model powers ChatSeller?', a: 'ChatSeller uses a combination of large language models and retrieval-augmented generation (RAG) to ensure answers come from your actual business knowledge, not generic AI hallucinations.' },
-  { q: 'Can my staff still reply directly on WhatsApp?', a: 'Absolutely. This is a core feature. When a staff member replies from an authorized WhatsApp number, ChatSeller detects it and steps back automatically. No mode switching needed.' },
+  { q: 'Can my staff still take over a conversation directly?', a: 'Absolutely. This is a core feature. Staff can jump into any conversation from the dashboard and ChatSeller detects it and steps back automatically. No mode switching needed.' },
 ];
 
 function FAQItem({ q, a, open, onToggle }) {

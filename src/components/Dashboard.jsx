@@ -60,7 +60,7 @@ export default function Dashboard() {
           <h2 style={{ marginTop: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'rgb(245 245 243)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
             Total visibility into your
             <br />
-            <span style={{ color: 'rgb(120 113 108)' }}>WhatsApp sales machine.</span>
+            <span style={{ color: 'rgb(120 113 108)' }}>chat sales machine.</span>
           </h2>
           <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 560, margin: '1rem auto 0' }}>
             Monitor conversations, manage your catalog, train the AI with your knowledge,

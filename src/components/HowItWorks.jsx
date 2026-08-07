@@ -7,8 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 const STEPS = [
   {
     step: '01',
-    title: 'Connect your WhatsApp Business number',
-    desc: 'Link your official WhatsApp Business API number in minutes. No tech team needed — just your phone number and Meta Business account.',
+    title: 'Get your chat link in seconds',
+    desc: 'Sign up and get a shareable chat link instantly — no tech team, no app store, no approval process. Drop it in your bio, on your site, or on any product page.',
     icon: <svg width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>,
   },
   {

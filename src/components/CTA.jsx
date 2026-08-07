@@ -50,7 +50,7 @@ export default function CTA() {
           </span>
 
           <h2 style={{ margin: '1rem 0 0.75rem', fontSize: 'clamp(1.6rem, 4vw, 2.6rem)', fontWeight: 900, color: 'rgb(245 245 243)', lineHeight: 1.1, letterSpacing: '-0.03em' }}>
-            Turn every WhatsApp message into
+            Turn every chat message into
             <br />
             <span style={{ background: 'linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #a78bfa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               a closed sale.

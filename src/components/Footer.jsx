@@ -27,7 +27,7 @@ export default function Footer() {
               <span style={{ fontWeight: 700, color: 'rgb(245 245 243)', fontSize: '1rem', letterSpacing: '-0.02em' }}>ChatSeller</span>
             </div>
             <p style={{ color: 'rgb(87 83 78)', fontSize: '0.875rem', lineHeight: 1.7, maxWidth: 300 }}>
-              Turning WhatsApp into your most productive salesperson, 24/7. By Apt-Intel.
+              Your most productive salesperson, live on a link, 24/7. By Apt-Intel.
             </p>
             <p style={{ color: 'rgb(68 64 60)', fontSize: '0.75rem', marginTop: '1.5rem' }}>
               © 2026 ChatSeller by Apt-Intel. All rights reserved.
@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className="footer-bottom-strip" style={{ borderTop: '1px solid rgb(28 25 23)', paddingTop: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <p style={{ color: 'rgb(68 64 60)', fontSize: '0.75rem' }}>
-            Built for WhatsApp businesses, worldwide. Powered by AI.
+            Built for growing businesses, worldwide. Powered by AI.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'rgb(16 185 129)', boxShadow: '0 0 6px rgb(16 185 129 / 0.6)' }}/>

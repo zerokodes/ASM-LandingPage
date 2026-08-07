@@ -9,7 +9,7 @@ const PAINS = [
     emoji: '😩',
     stat: '3hrs',
     statLabel: 'wasted daily',
-    title: 'Staff drowning in WhatsApp messages',
+    title: 'Staff drowning in chat messages',
     desc: 'Your team spends hours manually replying to the same questions — pricing, availability, delivery — instead of doing high-value work.',
     accent: '#ef4444',
   },
@@ -34,7 +34,7 @@ const PAINS = [
     stat: '∅',
     statLabel: 'sales data captured',
     title: 'No insight into what customers want',
-    desc: 'WhatsApp conversations vanish into chat history. You have zero data on what products are asked about most.',
+    desc: 'Chat conversations vanish into scattered history. You have zero data on what products are asked about most.',
     accent: '#ec4899',
   },
   {
@@ -50,7 +50,7 @@ const PAINS = [
     stat: '5×',
     statLabel: 'overhead to scale',
     title: 'Every growth milestone means new hires',
-    desc: 'Every 20% growth in customers means hiring another WhatsApp responder. There\'s no leverage — until now.',
+    desc: 'Every 20% growth in customers means hiring another chat responder. There\'s no leverage — until now.',
     accent: '#06b6d4',
   },
 ];
@@ -179,7 +179,7 @@ export default function Problem() {
         <div ref={titleRef} style={{ opacity: 0, textAlign: 'center', marginBottom: '3.5rem' }}>
           <span className="section-label">The Problem</span>
           <h2 style={{ marginTop: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, color: 'rgb(245 245 243)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
-            Running a business on WhatsApp<br />
+            Running sales chat by hand<br />
             <span style={{ color: 'rgb(120 113 108)' }}>is exhausting.</span>
           </h2>
           <p style={{ marginTop: '1rem', color: 'rgb(163 158 153)', fontSize: '1.05rem', maxWidth: 520, margin: '1rem auto 0' }}>

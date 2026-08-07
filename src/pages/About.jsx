@@ -5,7 +5,7 @@ const TEAM = [
   {
     name: 'ChatSeller Engineering',
     role: 'Product & Engineering',
-    desc: 'A team of engineers building the automation layer that powers ChatSeller — from WhatsApp webhook handling to real-time AI inference.',
+    desc: 'A team of engineers building the automation layer that powers ChatSeller — from real-time chat delivery to real-time AI inference.',
     accent: '#60a5fa',
     initials: 'CE',
   },
@@ -63,7 +63,7 @@ const VALUES = [
       </svg>
     ),
     title: 'Human always wins',
-    desc: 'The staff override feature is non-negotiable. AI assists; humans decide. Any staff member can reclaim any conversation at any time with a single reply.',
+    desc: 'The staff override feature is non-negotiable. AI assists; humans decide. Any staff member can take over any conversation from the dashboard at any time.',
     accent: '#ec4899',
   },
 ];
@@ -107,14 +107,14 @@ export default function About() {
           marginBottom: '1.25rem', maxWidth: 720,
         }}>
           We&apos;re building the AI sales layer<br />
-          <span style={{ color: 'rgb(96 165 250)' }}>every WhatsApp business deserves.</span>
+          <span style={{ color: 'rgb(96 165 250)' }}>every growing business deserves.</span>
         </h1>
 
         <p style={{ color: 'rgb(163 158 153)', fontSize: '1rem', lineHeight: 1.75, maxWidth: 620 }}>
           ChatSeller, built by Apt-Intel, was built on a simple observation:
-          WhatsApp is the world&apos;s most used commerce channel, but it scales terribly.
-          The moment a business grows past a few hundred customers, WhatsApp
-          becomes a liability — staff are overwhelmed, leads go cold, and
+          chat is how customers want to buy, but manual chat support scales terribly.
+          The moment a business grows past a few hundred customers, one-on-one
+          replies become a liability — staff are overwhelmed, leads go cold, and
           the founder can&apos;t sleep. We&apos;re changing that, starting with Nigeria.
         </p>
       </section>
@@ -130,13 +130,13 @@ export default function About() {
           </h2>
           <p style={{ color: 'rgb(163 158 153)', lineHeight: 1.75, marginBottom: '1rem' }}>
             Make AI-powered sales automation accessible to any business that
-            sells on WhatsApp — not just corporations with technical teams.
+            sells through chat — not just corporations with technical teams.
             A sole trader and a multi-location retail chain should both be able
             to deploy an AI sales agent in under 30 minutes, at a price that
             makes sense for their market.
           </p>
           <p style={{ color: 'rgb(163 158 153)', lineHeight: 1.75 }}>
-            We launched in Nigeria because WhatsApp commerce is most concentrated
+            We launched in Nigeria because chat-first commerce is most concentrated
             here, and we know this market deeply. Global expansion follows the
             same playbook: local pricing, local payment rails, and a product shaped
             around how businesses in each market actually communicate.
@@ -240,7 +240,7 @@ export default function About() {
           border: '1px solid rgba(37,99,235,0.2)',
         }}>
           <h2 style={{ fontSize: 'clamp(1.25rem, 4vw, 1.75rem)', fontWeight: 800, color: 'rgb(245 245 243)', marginBottom: '1rem' }}>
-            Ready to put your WhatsApp on autopilot?
+            Ready to put your sales chat on autopilot?
           </h2>
           <Link to="/" style={{
             display: 'inline-block', padding: '0.75rem 2rem',

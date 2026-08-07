@@ -70,7 +70,7 @@ const METRICS = [
   { value: '90%', label: 'Less staff load' },
 ];
 
-/* Messages to animate in sequence — keep WhatsApp green for the chat bubble colors */
+/* Messages to animate in sequence */
 const CHAT_SCRIPT = [
   { from: 'customer', text: 'Hi! Do you have the Air Max 270 in size 42?' },
   { from: 'asm',      text: '✅ Yes! We have it in black and white. $85. Which colour would you like?' },
@@ -119,7 +119,7 @@ function AnimatedBubble({ msg, onDone }) {
         maxWidth: '82%',
         padding: '10px 14px',
         borderRadius: isCustomer ? '16px 16px 4px 16px' : '16px 16px 16px 4px',
-        background: isCustomer ? '#005C4B' : '#1f2937',
+        background: isCustomer ? '#334155' : '#1f2937',
         border: isCustomer ? 'none' : '1px solid rgba(55,65,81,0.7)',
         color: 'white',
         fontSize: '0.8125rem',
@@ -202,23 +202,23 @@ function ChatMockup({ mobile = false }) {
         overflow: 'hidden',
         boxShadow: mobile ? '0 12px 40px rgba(0,0,0,0.5)' : '0 24px 60px rgba(0,0,0,0.6)',
       }}>
-        {/* WA header */}
-        <div style={{ background: '#075E54', padding: mobile ? '10px 14px' : '12px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
+        {/* Chat header */}
+        <div style={{ background: 'linear-gradient(135deg, #2563eb 0%, #4338ca 100%)', padding: mobile ? '10px 14px' : '12px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{
             width: 32, height: 32, borderRadius: '50%',
-            background: 'rgb(37 99 235)',
+            background: 'rgba(255,255,255,0.18)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontWeight: 700, color: 'white', fontSize: '0.85rem', flexShrink: 0,
           }}>A</div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ color: 'white', fontWeight: 600, fontSize: '0.8125rem' }}>ChatSeller Assistant</div>
-            <div style={{ color: '#a7f3d0', fontSize: '0.65rem' }}>Online · AI Powered</div>
+            <div style={{ color: '#c7d2fe', fontSize: '0.65rem' }}>Online · AI Powered</div>
           </div>
           {/* Inline badge strip — only on mobile, replaces floating badges */}
           {mobile && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,0,0,0.25)', borderRadius: 20, padding: '4px 10px', flexShrink: 0 }}>
               <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#10b981', boxShadow: '0 0 6px #10b981', flexShrink: 0 }}/>
-              <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#a7f3d0', whiteSpace: 'nowrap' }}>AI Active</span>
+              <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#c7d2fe', whiteSpace: 'nowrap' }}>AI Active</span>
             </div>
           )}
           {!mobile && (
@@ -389,14 +389,14 @@ export default function Hero() {
             <div ref={badgeRef} style={{ opacity: 0 }}>
               <span className="section-label">
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#60a5fa', display: 'inline-block', animation: 'pulse 2s infinite' }}/>
-                WhatsApp AI Sales Assistant
+                AI Sales Chat Widget
               </span>
             </div>
 
             <h1 ref={headlineRef} style={{ opacity: 0, margin: 0, fontSize: 'clamp(2rem, 6vw, 4rem)', fontWeight: 900, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
-              <span style={{ color: 'rgb(245 245 243)' }}>Replace your WhatsApp</span>
+              <span style={{ color: 'rgb(245 245 243)' }}>Replace your reply</span>
               <br />
-              <span style={{ color: 'rgb(245 245 243)' }}>reply team with</span>
+              <span style={{ color: 'rgb(245 245 243)' }}>team with</span>
               <br />
               <span style={{ background: 'linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #a78bfa 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 AI that sells.
@@ -404,8 +404,8 @@ export default function Hero() {
             </h1>
 
             <p ref={subRef} style={{ opacity: 0, margin: 0, fontSize: '1rem', color: 'rgb(163 158 153)', lineHeight: 1.7 }}>
-              ChatSeller turns your WhatsApp into a fully automated sales engine — answering questions,
-              showcasing products, taking orders, and following up, all without lifting a finger.
+              ChatSeller gives your store a shareable chat link that turns visitors into sales — answering
+              questions, showcasing products, taking orders, and following up, all without lifting a finger.
             </p>
 
             <div ref={ctaRef} style={{ opacity: 0, display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }} className="hero-cta-row">
