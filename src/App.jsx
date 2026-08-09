@@ -1,22 +1,19 @@
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Problem from './components/Problem';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Dashboard from './components/Dashboard';
-import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
-import About from './pages/About';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
+import Nav from '@/components/sections/Nav';
+import Hero from '@/components/sections/Hero';
+import Problem from '@/components/sections/Problem';
+import Features from '@/components/sections/Features';
+import HowItWorks from '@/components/sections/HowItWorks';
+import Dashboard from '@/components/sections/Dashboard';
+import Testimonials from '@/components/sections/Testimonials';
+import Pricing from '@/components/sections/Pricing';
+import FAQ from '@/components/sections/FAQ';
+import CTA from '@/components/sections/CTA';
+import Footer from '@/components/sections/Footer';
 
-function HomePage() {
+export default function App() {
   return (
     <>
+      <Nav />
       <Hero />
       <Problem />
       <Features />
@@ -26,23 +23,7 @@ function HomePage() {
       <Pricing />
       <FAQ />
       <CTA />
-    </>
-  );
-}
-
-export default function App() {
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-        </Routes>
-      </main>
       <Footer />
-    </div>
+    </>
   );
 }
