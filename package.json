@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build && node scripts/prerender.cjs",
     "build:vite-only": "vite build",
+    "postinstall": "playwright install chromium",
     "lint": "oxlint",
     "preview": "vite preview"
   },
