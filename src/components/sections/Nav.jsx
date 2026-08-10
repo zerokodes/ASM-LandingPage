@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { NAV_LINKS, WHATSAPP_URL } from '@/data/nav';
 
@@ -21,7 +22,7 @@ export default function Nav() {
     <>
       <nav className={cn('nav', scrolled && 'scrolled')}>
         <div className="nav-inner">
-          <a href="#" className="nav-logo">
+          <Link to="/" className="nav-logo">
             <span className="nav-mark">
               <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" width="18" height="18">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="white" stroke="none" />
@@ -29,15 +30,15 @@ export default function Nav() {
             </span>
             <span className="nav-brand">ChatSeller</span>
             <span className="nav-by">by Apt-Intel</span>
-          </a>
+          </Link>
           <div className="nav-links">
             {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href}>{l.label}</a>
+              <a key={l.href} href={`/${l.href}`}>{l.label}</a>
             ))}
           </div>
           <div className="nav-ctas">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost">Contact Sales</a>
-            <a href="#get-started" className="btn-primary">Get Started Free</a>
+            <a href="/#get-started" className="btn-primary">Get Started Free</a>
           </div>
           <button
             className="nav-hamburger"
@@ -56,11 +57,11 @@ export default function Nav() {
       <div className={cn('nav-backdrop', menuOpen && 'open')} onClick={() => setMenuOpen(false)} />
       <div className={cn('nav-mobile-panel', menuOpen && 'open')}>
         {NAV_LINKS.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>{l.label}</a>
+          <a key={l.href} href={`/${l.href}`} onClick={() => setMenuOpen(false)}>{l.label}</a>
         ))}
         <div className="nav-mobile-ctas">
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost" onClick={() => setMenuOpen(false)}>Contact Sales</a>
-          <a href="#get-started" className="btn-primary" onClick={() => setMenuOpen(false)}>Get Started Free</a>
+          <a href="/#get-started" className="btn-primary" onClick={() => setMenuOpen(false)}>Get Started Free</a>
         </div>
       </div>
     </>

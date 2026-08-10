@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Nav from '@/components/sections/Nav';
 import Hero from '@/components/sections/Hero';
 import Problem from '@/components/sections/Problem';
@@ -9,11 +10,13 @@ import Pricing from '@/components/sections/Pricing';
 import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
 import Footer from '@/components/sections/Footer';
+import About from '@/components/pages/About';
+import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
+import TermsOfService from '@/components/pages/TermsOfService';
 
-export default function App() {
+function HomePage() {
   return (
     <>
-      <Nav />
       <Hero />
       <Problem />
       <Features />
@@ -23,6 +26,20 @@ export default function App() {
       <Pricing />
       <FAQ />
       <CTA />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+      </Routes>
       <Footer />
     </>
   );

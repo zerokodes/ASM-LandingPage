@@ -1,0 +1,189 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { BackLink, LegalSection, P, UL } from '@/components/ui/Legal';
+
+const EFFECTIVE_DATE = 'June 27, 2026';
+const COMPANY = 'Apt-Intel';
+const EMAIL = 'legal@chatseller.dev';
+const APP_NAME = 'ChatSeller';
+
+export default function TermsOfService() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  return (
+    <div className="legal-wrap">
+      <div className="wrap legal-page">
+        <BackLink />
+        <span className="section-label" style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>Legal</span>
+        <h1 className="legal-h1">Terms of Service</h1>
+        <p className="legal-meta">Effective date: {EFFECTIVE_DATE} &nbsp;·&nbsp; {COMPANY}</p>
+
+        <div className="legal-notice">
+          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <p>By registering a business account on {APP_NAME} you agree to these Terms. If you do not agree, do not use the service.</p>
+        </div>
+
+        <LegalSection title="1. Acceptance of Terms">
+          <P>
+            These Terms of Service ("Terms") constitute a legally binding agreement between you ("Business" or "you") and
+            {' '}{COMPANY} ("ChatSeller", "we", "us") governing your access to and use of the {APP_NAME} platform, including
+            all associated software, APIs, dashboards, and the ChatSeller chat widget.
+          </P>
+          <P>
+            By creating an account, publishing a chat link, or using any feature of the platform, you confirm that you have
+            read, understood, and agree to be bound by these Terms and our <Link to="/privacy">Privacy Policy</Link>.
+          </P>
+        </LegalSection>
+
+        <LegalSection title="2. Eligibility">
+          <P>To use ChatSeller, you must:</P>
+          <UL items={[
+            'Be a registered business entity or individual trading legally in any supported jurisdiction',
+            'Be at least 18 years of age',
+            'Have the authority to bind your business to these Terms',
+            'Not be prohibited from using the service under applicable law',
+          ]} />
+        </LegalSection>
+
+        <LegalSection title="3. Permitted Use">
+          <P>You may use ChatSeller to:</P>
+          <UL items={[
+            'Automate customer inquiry responses for your registered business',
+            'Manage and display your product catalog to customers via your chat widget',
+            'Capture and track orders placed through widget conversations',
+            'Train an AI agent on your own business knowledge (documents, FAQs, URLs)',
+            'Receive notifications and escalation alerts for conversations requiring human attention',
+            'Manage staff access to conversations through role-based permissions',
+          ]} />
+          <P>You may <strong>not</strong> use ChatSeller to:</P>
+          <UL items={[
+            'Send promotional messages to users who have not consented to receive them',
+            'Impersonate another business or individual',
+            'Engage in any illegal activity including fraud, phishing, or money laundering',
+            'Resell, sublicense, or white-label the ChatSeller platform without written permission',
+            "Attempt to reverse-engineer, decompile, or extract ChatSeller's source code or AI models",
+            "Exceed your plan's usage limits through automation or API abuse",
+          ]} />
+        </LegalSection>
+
+        <LegalSection title="4. Account Responsibilities">
+          <P>
+            You are responsible for maintaining the confidentiality of your ChatSeller dashboard credentials. You must
+            immediately notify us at <a href={`mailto:${EMAIL}`}>{EMAIL}</a> of any unauthorised access to your account.
+          </P>
+          <P>
+            All activity occurring under your account is your responsibility. ChatSeller is not liable for losses resulting
+            from compromised credentials where the breach was not caused by our systems.
+          </P>
+        </LegalSection>
+
+        <LegalSection title="5. AI-Generated Content">
+          <P>ChatSeller uses large language models (LLMs) and retrieval-augmented generation (RAG) to produce responses on behalf of your business. You acknowledge that:</P>
+          <UL items={[
+            'AI-generated responses may occasionally be inaccurate, incomplete, or inappropriate despite guardrails',
+            'You are responsible for reviewing and configuring your knowledge base to minimise incorrect responses',
+            'You are ultimately responsible for all communications sent through your chat widget, including those generated by ChatSeller',
+            "ChatSeller's compliance guardrail is designed to limit off-topic responses, but it does not guarantee perfect accuracy",
+            'You should test AI responses on your catalog and FAQs before going live with customers',
+          ]} />
+        </LegalSection>
+
+        <LegalSection title="6. Subscription and Payment">
+          <P>
+            ChatSeller is offered on a subscription basis. Subscription plans, pricing, and feature limits are displayed on
+            our pricing page and may be updated with 30 days' notice to existing subscribers. Prices are shown in the local
+            currency of your market where available.
+          </P>
+          <UL items={[
+            'Subscriptions are billed on the cycle chosen at sign-up (monthly or annual)',
+            'Annual subscriptions may be paid offline to your account manager',
+            "Where Paystack is used, payments are subject to Paystack's terms and applicable card/bank charges",
+            'Refunds are available within 7 days of a new subscription if ChatSeller is unable to deliver the core service (AI responses via your chat widget)',
+            'Unused portions of a billing period are non-refundable on cancellation',
+          ]} />
+        </LegalSection>
+
+        <LegalSection title="7. Service Availability">
+          <P>
+            We target 99.5% uptime for the ChatSeller platform, excluding scheduled maintenance and events outside our
+            control (including third-party infrastructure outages or force majeure events). We are not liable for losses
+            resulting from service interruptions caused by third-party infrastructure.
+          </P>
+          <P>We will provide at least 24 hours' notice for scheduled maintenance windows that affect service availability.</P>
+        </LegalSection>
+
+        <LegalSection title="8. Intellectual Property">
+          <P>
+            The {APP_NAME} platform, including its software, AI models, user interface, and branding, is the intellectual
+            property of {COMPANY}. These Terms grant you a limited, non-exclusive, non-transferable licence to use the
+            platform for your own business purposes only.
+          </P>
+          <P>
+            You retain ownership of all content you upload to ChatSeller (catalog data, knowledge base documents, business
+            information). By uploading content, you grant ChatSeller a licence to process and use that content solely to
+            deliver the service to your business.
+          </P>
+        </LegalSection>
+
+        <LegalSection title="9. Termination">
+          <P>
+            Either party may terminate the agreement at any time. You may close your account through the dashboard or by
+            contacting support. We may suspend or terminate your access immediately if:
+          </P>
+          <UL items={[
+            'You violate these Terms',
+            'We detect fraudulent or abusive activity',
+            'Payment fails and is not resolved within 14 days of notice',
+          ]} />
+          <P>
+            On termination, your data will be handled as described in our Privacy Policy. Obligations that by nature survive
+            termination (including sections 5, 8, 10, and 11) remain in effect.
+          </P>
+        </LegalSection>
+
+        <LegalSection title="10. Limitation of Liability">
+          <P>
+            To the maximum extent permitted by law, {COMPANY} shall not be liable for any indirect, incidental, special,
+            consequential, or punitive damages, including but not limited to: loss of revenue, loss of customers, or damage
+            to reputation arising from your use of ChatSeller or from any AI-generated response sent to your customers.
+          </P>
+          <P>
+            Our total liability to you for any claim arising out of or relating to these Terms or the platform shall not
+            exceed the total fees paid by you to ChatSeller in the 3 months preceding the claim.
+          </P>
+        </LegalSection>
+
+        <LegalSection title="11. Governing Law">
+          <P>
+            These Terms are governed by the laws of the Federal Republic of Nigeria. Any disputes arising under or in
+            connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Lagos State, Nigeria,
+            except where mandatory consumer protection law requires otherwise in your jurisdiction.
+          </P>
+        </LegalSection>
+
+        <LegalSection title="12. Changes to These Terms">
+          <P>
+            We may update these Terms from time to time. Material changes will be communicated via email or dashboard notice
+            at least 14 days before they take effect for existing subscribers. Continued use of ChatSeller after that date
+            constitutes acceptance of the updated Terms.
+          </P>
+        </LegalSection>
+
+        <LegalSection title="13. Contact">
+          <P>For legal inquiries, disputes, or Terms-related questions:</P>
+          <div className="legal-contact-box">
+            <div><span>Email: </span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></div>
+            <div><span>Company: </span>{COMPANY}</div>
+          </div>
+        </LegalSection>
+
+        <div className="legal-footer-links">
+          <Link to="/privacy">Privacy Policy →</Link>
+          <Link to="/about">About ChatSeller →</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
