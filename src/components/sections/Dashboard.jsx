@@ -1,4 +1,5 @@
 import { DASHBOARD_HIGHLIGHTS } from '@/data/steps';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const SHOTS = [
   { glow: 'radial-gradient(ellipse at center,rgba(37,99,235,.1) 0%,transparent 70%)', url: 'dashboard.asm.io/knowledge', img: '/knowledge-preview.png', alt: 'ChatSeller Knowledge Base Dashboard', label: 'Knowledge Base', labelColor: 'rgb(96 165 250)' },
@@ -6,8 +7,9 @@ const SHOTS = [
 ];
 
 export default function Dashboard() {
+  const sectionRef = useScrollReveal({ itemsSelector: '.section-hd, .dash-shot, .dash-highlight' });
   return (
-    <section style={{ overflow: 'hidden' }}>
+    <section ref={sectionRef} style={{ overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 800, height: 400, background: 'radial-gradient(ellipse,rgba(37,99,235,.07) 0%,transparent 70%)', pointerEvents: 'none' }} />
       <div className="wrap">
         <div className="section-hd">

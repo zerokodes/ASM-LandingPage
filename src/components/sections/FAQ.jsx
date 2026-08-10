@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { FAQS } from '@/data/faqs';
 import { WHATSAPP_QUESTION_URL } from '@/data/nav';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
+  const sectionRef = useScrollReveal({ itemsSelector: '.section-hd, .faq-item' });
 
   return (
-    <section id="faq">
+    <section id="faq" ref={sectionRef}>
       <div className="wrap" style={{ maxWidth: 720 }}>
         <div className="section-hd">
           <span className="section-label">FAQ</span>

@@ -1,5 +1,6 @@
 import { REVIEWS } from '@/data/testimonials';
 import { hexToRgb } from '@/lib/utils';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 function Stars({ rgb }) {
   return (
@@ -41,9 +42,10 @@ function TestiCard({ r }) {
 
 export default function Testimonials() {
   const doubled = [...REVIEWS, ...REVIEWS];
+  const sectionRef = useScrollReveal({ itemsSelector: '.section-hd, .trust-strip' });
 
   return (
-    <section>
+    <section ref={sectionRef}>
       <div className="wrap" style={{ marginBottom: '3.5rem' }}>
         <div className="section-hd">
           <span className="section-label">Testimonials</span>

@@ -1,8 +1,10 @@
 import { STEPS } from '@/data/steps';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function HowItWorks() {
+  const sectionRef = useScrollReveal();
   return (
-    <section id="how-it-works" style={{ background: 'rgba(28,25,23,.3)' }}>
+    <section id="how-it-works" ref={sectionRef} style={{ background: 'rgba(28,25,23,.3)' }}>
       <div className="wrap">
         <div className="section-hd">
           <span className="section-label">How It Works</span>

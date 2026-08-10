@@ -1,10 +1,12 @@
 import { WHATSAPP_URL } from '@/data/nav';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const TICKS = ['No credit card', 'Cancel anytime', 'Live in 30 minutes', 'Dedicated support'];
 
 export default function CTA() {
+  const sectionRef = useScrollReveal({ itemsSelector: '.cta-box' });
   return (
-    <section id="get-started" style={{ padding: '4rem 0', overflow: 'hidden' }}>
+    <section id="get-started" ref={sectionRef} style={{ padding: '4rem 0', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 700, height: 350, background: 'radial-gradient(ellipse,rgba(37,99,235,.1) 0%,transparent 70%)', pointerEvents: 'none' }} />
       <div className="wrap" style={{ maxWidth: 780 }}>
         <div className="cta-box">

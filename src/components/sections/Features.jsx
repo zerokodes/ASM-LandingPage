@@ -1,10 +1,12 @@
 import { FEATURES } from '@/data/features';
 import { hexToRgb } from '@/lib/utils';
 import Icon from '@/components/ui/Icon';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function Features() {
+  const sectionRef = useScrollReveal();
   return (
-    <section id="features" style={{ background: 'rgba(28,25,23,.15)' }}>
+    <section id="features" ref={sectionRef} style={{ background: 'rgba(28,25,23,.15)' }}>
       <div className="wrap">
         <div className="section-hd">
           <span className="section-label">Features</span>

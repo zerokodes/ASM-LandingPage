@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import { PLANS } from '@/data/pricing';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 function Tick() {
   return (
@@ -12,8 +13,9 @@ function Tick() {
 }
 
 export default function Pricing() {
+  const sectionRef = useScrollReveal({ itemsSelector: '.section-hd, .price-card' });
   return (
-    <section id="pricing">
+    <section id="pricing" ref={sectionRef}>
       <div className="wrap">
         <div className="section-hd">
           <span className="section-label">Pricing</span>

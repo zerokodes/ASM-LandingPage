@@ -1,10 +1,12 @@
 import { PAIN_POINTS } from '@/data/features';
 import { hexToRgb } from '@/lib/utils';
 import Icon from '@/components/ui/Icon';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 
 export default function Problem() {
+  const sectionRef = useScrollReveal();
   return (
-    <section>
+    <section ref={sectionRef}>
       <div className="wrap">
         <div className="section-hd">
           <span className="section-label">The Problem</span>
