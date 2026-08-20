@@ -15,10 +15,10 @@ export default function CTA() {
             14-Day Free Trial
           </span>
           <h2 className="cta-h2">Turn every chat message into<br /><span className="grad">a closed sale.</span></h2>
-          <p className="cta-p">Start ChatSeller today. In 30 minutes you'll have an AI agent trained on your business, answering customers and converting leads — day and night.</p>
+          <p className="cta-p">Start ChatSeller today. In 30 minutes you'll have an AI agent trained on your business, answering customers and converting leads day and night.</p>
           <div className="cta-actions">
             <a href="#get-started" className="btn-primary" style={{ fontSize: '.9375rem', padding: '.75rem 1.75rem' }}>
-              Start Free Trial — No Card Needed
+              Start Free Trial, No Card Needed
               <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ fontSize: '.9375rem', padding: '.75rem 1.75rem' }}>

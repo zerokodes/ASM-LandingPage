@@ -18,7 +18,7 @@ export default function Dashboard() {
             Total visibility into your<br /><span className="dim">chat sales machine.</span>
           </h2>
           <p className="section-sub" style={{ marginInline: 'auto', maxWidth: 560 }}>
-            Monitor conversations, manage your catalog, train the AI with your knowledge, and track every sale — all from one clean dashboard.
+            Monitor conversations, manage your catalog, train the AI with your knowledge, and track every sale, all from one clean dashboard.
           </p>
         </div>
         <div className="dashboard-grid">

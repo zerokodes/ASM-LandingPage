@@ -20,13 +20,13 @@ const VALUES = [
   {
     accent: '#34d399',
     title: 'Local focus, global platform',
-    desc: 'We launch market-by-market so our pricing, infrastructure, and UX reflect local business realities — starting with Nigeria and expanding globally.',
+    desc: 'We launch market-by-market so our pricing, infrastructure, and UX reflect local business realities, starting with Nigeria and expanding globally.',
     icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   {
     accent: '#f59e0b',
     title: 'Speed without sacrifice',
-    desc: 'We ship fast and stay lean — but never at the cost of reliability. Every feature is live-tested on real customer conversations before release.',
+    desc: 'We ship fast and stay lean, but never at the cost of reliability. Every feature is live-tested on real customer conversations before release.',
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
   },
   {
@@ -38,7 +38,7 @@ const VALUES = [
 ];
 
 const TEAM = [
-  { initials: 'CE', accent: '#60a5fa', name: 'ChatSeller Engineering', role: 'Product & Engineering', desc: 'A team of engineers building the automation layer that powers ChatSeller — from real-time chat delivery to real-time AI inference.' },
+  { initials: 'CE', accent: '#60a5fa', name: 'ChatSeller Engineering', role: 'Product & Engineering', desc: 'A team of engineers building the automation layer that powers ChatSeller, from real-time chat delivery to real-time AI inference.' },
   { initials: 'AI', accent: '#818cf8', name: 'AI Research', role: 'Language & Compliance', desc: 'Responsible for the guardrail layer that keeps ChatSeller on-topic, factually grounded in your catalog, and free from hallucinated responses.' },
   { initials: 'CS', accent: '#34d399', name: 'Customer Success', role: 'Onboarding & Support', desc: 'Dedicated to getting every business live within 30 minutes and achieving their first automated sale within the first week.' },
 ];
@@ -58,7 +58,7 @@ export default function About() {
           <p className="section-sub" style={{ marginTop: '1.25rem', marginInline: 0 }}>
             ChatSeller, built by Apt-Intel, was built on a simple observation: chat is how customers want to buy, but manual chat
             support scales terribly. The moment a business grows past a few hundred customers, one-on-one replies become a
-            liability — staff are overwhelmed, leads go cold, and the founder can&apos;t sleep. We&apos;re changing that, starting with Nigeria.
+            liability. Staff get overwhelmed, leads go cold, and the founder can&apos;t sleep. We&apos;re changing that, starting with Nigeria.
           </p>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function About() {
           <div>
             <h2 className="legal-h2">Our mission</h2>
             <p className="legal-p">
-              Make AI-powered sales automation accessible to any business that sells through chat — not just corporations with
+              Make AI-powered sales automation accessible to any business that sells through chat, not just corporations with
               technical teams. A sole trader and a multi-location retail chain should both be able to deploy an AI sales agent
               in under 30 minutes, at a price that makes sense for their market.
             </p>

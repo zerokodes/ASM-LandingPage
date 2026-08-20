@@ -97,10 +97,10 @@ export default function PrivacyPolicy() {
         <LegalSection title="6. Third-Party Services">
           <P>ChatSeller integrates with the following third-party services, each with their own privacy policies:</P>
           <UL items={[
-            'MongoDB Atlas — primary database (EU region)',
-            'Cloudinary — media and image storage',
-            'Paystack — payment processing for Nigerian businesses (where applicable)',
-            "OpenAI / Anthropic — AI language model inference (messages may be processed by these providers' APIs in accordance with their data processing agreements)",
+            'MongoDB Atlas: primary database (EU region)',
+            'Cloudinary: media and image storage',
+            'Paystack: payment processing for Nigerian businesses (where applicable)',
+            "OpenAI / Anthropic: AI language model inference (messages may be processed by these providers' APIs in accordance with their data processing agreements)",
           ]} />
         </LegalSection>
 

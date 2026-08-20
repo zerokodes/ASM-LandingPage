@@ -2,7 +2,7 @@ export const STEPS = [
   {
     num: 'STEP 01',
     title: 'Get your chat link in seconds',
-    desc: 'Sign up and get a shareable chat link instantly — no tech team, no app store, no approval process. Drop it in your bio, on your site, or on any product page.',
+    desc: 'Sign up and get a shareable chat link instantly. No tech team, no app store, no approval process. Drop it in your bio, on your site, or on any product page.',
     icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1',
   },
   {
@@ -13,7 +13,7 @@ export const STEPS = [
   },
   {
     num: 'STEP 03',
-    title: 'ChatSeller starts selling — you review and refine',
+    title: 'ChatSeller starts selling, you review and refine',
     desc: 'Go live in minutes. Monitor conversations from your dashboard, see what questions come up most, and refine your knowledge base anytime.',
     icon: null,
     isBolt: true,

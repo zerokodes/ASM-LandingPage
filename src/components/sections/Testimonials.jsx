@@ -53,7 +53,7 @@ export default function Testimonials() {
             Businesses already<br /><span className="dim">running on autopilot.</span>
           </h2>
           <p className="section-sub" style={{ marginInline: 'auto' }}>
-            Real results from our early customers — the numbers businesses report after the first 30 days on ChatSeller.
+            Real results from our early customers. These are the numbers businesses report after their first 30 days on ChatSeller.
           </p>
         </div>
       </div>
@@ -72,7 +72,7 @@ export default function Testimonials() {
       </div>
       <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
         <a href="#get-started" className="btn-primary" style={{ fontSize: '1rem', padding: '.875rem 2.25rem' }}>
-          Join Them — Start Free
+          Join Them, Start Free
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
         <p style={{ color: 'rgb(120 113 108)', fontSize: '.8125rem', marginTop: 10 }}>14-day free trial · No credit card required</p>

@@ -29,7 +29,7 @@ export default function Hero() {
               Replace your reply<br />team with<br /><span className="grad">AI that sells.</span>
             </h1>
             <p className="hero-sub fade-up" style={{ animationDelay: '.3s' }}>
-              ChatSeller gives your store a shareable chat link that turns visitors into sales — answering questions, showcasing products, taking orders, and following up, all without lifting a finger.
+              ChatSeller gives your store a shareable chat link that turns visitors into sales. It answers questions, showcases products, takes orders, and follows up, all without you lifting a finger.
             </p>
             <div className="hero-cta-row fade-up" style={{ animationDelay: '.35s' }}>
               <a href="#get-started" className="btn-primary" style={{ fontSize: '1rem', padding: '.875rem 2rem' }}>
