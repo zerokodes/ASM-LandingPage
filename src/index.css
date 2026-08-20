@@ -101,7 +101,11 @@
   .chat-head-name { color: #fff; font-weight: 600; font-size: .8125rem; }
   .chat-head-status { color: #c7d2fe; font-size: .65rem; }
   .chat-head-icons { margin-left: auto; display: flex; gap: 12px; }
-  .chat-body { background: linear-gradient(180deg, #0d1117 0%, #111827 100%); padding: 14px 12px; min-height: 300px; max-height: 360px; display: flex; flex-direction: column; gap: 8px; overflow-y: auto; }
+  /* Fixed height, not a min/max range — the range let the panel grow and
+     shrink as the scripted chat animation added/reset messages, shifting
+     the whole page around it. A fixed height plus overflow-y keeps the
+     mockup's footprint constant; content scrolls within it instead. */
+  .chat-body { background: linear-gradient(180deg, #0d1117 0%, #111827 100%); padding: 14px 12px; height: 360px; display: flex; flex-direction: column; gap: 8px; overflow-y: auto; }
   .bubble-row { display: flex; }
   .bubble-row.mine { justify-content: flex-end; }
   .bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px 16px 16px 4px; background: #1f2937; border: 1px solid rgba(55,65,81,.7); color: #fff; font-size: .8125rem; line-height: 1.5; animation: fadeSlideUp .3s ease both; }
@@ -140,15 +144,20 @@
 
   /* ── How it works ── */
   .steps { display: flex; flex-direction: column; gap: 1.5rem; max-width: 720px; margin: 0 auto; }
-  .step-row { display: flex; gap: 1.5rem; align-items: flex-start; }
+  /* stretch (not flex-start): the indicator column must match the card's
+     full height so the connector line below the icon has real room to grow
+     into — otherwise, whenever the description text wraps to more lines and
+     makes the card taller than the fixed icon, the line falls short of the
+     next icon down (visible gap, mobile especially, where text wraps more). */
+  .step-row { display: flex; gap: 1.5rem; align-items: stretch; }
   .step-indicator { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
-  .step-icon-box { width: 56px; height: 56px; border-radius: 14px; background: rgb(28 25 23); border: 1px solid rgb(41 37 36); display: flex; align-items: center; justify-content: center; color: rgb(96 165 250); }
-  .step-line { width: 3px; height: 48px; background: linear-gradient(to bottom, rgb(96,165,250), rgb(37,99,235)); margin-top: 8px; border-radius: 2px; opacity: .9; }
+  .step-icon-box { width: 56px; height: 56px; border-radius: 14px; background: rgb(28 25 23); border: 1px solid rgb(41 37 36); display: flex; align-items: center; justify-content: center; color: rgb(96 165 250); flex-shrink: 0; }
+  .step-line { width: 3px; flex: 1 1 auto; min-height: 24px; background: linear-gradient(to bottom, rgb(96,165,250), rgb(37,99,235)); margin-top: 8px; border-radius: 2px; opacity: .9; }
   .step-card { flex: 1; padding: 1.5rem; transition: border-color .25s; }
   .step-card:hover { border-color: rgba(37,99,235,.3); }
   .step-num { font-size: .7rem; font-weight: 700; color: rgb(96 165 250); margin-bottom: 8px; letter-spacing: .08em; font-family: monospace; }
   .step-title { color: rgb(245 245 243); font-weight: 700; font-size: 1.125rem; margin-bottom: 8px; }
-  @media (max-width: 480px) { .step-row { gap: .875rem; } .step-icon-box { width: 44px; height: 44px; border-radius: 10px; } .step-line { height: 36px; } }
+  @media (max-width: 480px) { .step-row { gap: .875rem; } .step-icon-box { width: 44px; height: 44px; border-radius: 10px; } }
   .step-desc { color: rgb(163 158 153); font-size: .875rem; line-height: 1.65; }
 
   /* ── Dashboard ── */
