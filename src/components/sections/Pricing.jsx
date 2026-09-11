@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { PLANS } from '@/data/pricing';
+import { PLANS, BILLING_CYCLES, cyclePrice, naira } from '@/data/pricing';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 function Tick() {
@@ -14,45 +15,85 @@ function Tick() {
 
 export default function Pricing() {
   const sectionRef = useScrollReveal({ itemsSelector: '.section-hd, .price-card' });
+  const [cycleKey, setCycleKey] = useState('annual');
+  const cycle = BILLING_CYCLES.find((c) => c.key === cycleKey);
+
   return (
     <section id="pricing" ref={sectionRef}>
       <div className="wrap">
         <div className="section-hd">
           <span className="section-label">Pricing</span>
           <h2 className="section-title" style={{ marginTop: '1rem' }}>
-            Simple, transparent pricing.<br /><span className="dim">No surprises.</span>
+            Two plans. Both complete.<br /><span className="dim">Choose on scale, not features.</span>
           </h2>
-          <p className="section-sub" style={{ marginInline: 'auto', maxWidth: 480 }}>
-            Start free for 14 days. No credit card required. Upgrade or cancel anytime.
+          <p className="section-sub" style={{ marginInline: 'auto', maxWidth: 520 }}>
+            Every plan includes the full ChatSeller sales, CRM, commerce and analytics stack.
+            Max is a capacity, team-size and intelligence upgrade — not a paywall on the basics.
           </p>
         </div>
-        <div className="pricing-grid">
-          {PLANS.map((p) => (
-            <div className={cn('card-glass', 'price-card', p.featured && 'primary')} key={p.plan}>
-              {p.ribbon && <div className="price-ribbon">{p.ribbon}</div>}
-              <div className="price-body">
-                <div>
-                  <div className="price-plan">{p.plan}</div>
-                  <div className="price-amt-row">
-                    <span className="price-amt">{p.amount}</span>
-                    {p.period && <span className="price-period">{p.period}</span>}
-                  </div>
-                  <p className="price-desc">{p.desc}</p>
-                </div>
-                <div className="price-divider" />
-                <ul className="price-list">
-                  {p.features.map((f) => (
-                    <li key={f}><Tick />{f}</li>
-                  ))}
-                </ul>
-                <a href="#get-started" className={p.variant === 'primary' ? 'btn-primary' : 'btn-ghost'} style={{ textAlign: 'center', justifyContent: 'center', display: 'flex' }}>
-                  {p.cta}
-                </a>
-              </div>
-            </div>
+
+        {/* Billing-cycle toggle */}
+        <div className="billing-toggle" role="tablist" aria-label="Billing cycle">
+          {BILLING_CYCLES.map((c) => (
+            <button
+              key={c.key}
+              role="tab"
+              aria-selected={c.key === cycleKey}
+              className={cn('billing-toggle-btn', c.key === cycleKey && 'active')}
+              onClick={() => setCycleKey(c.key)}
+            >
+              {c.label}
+              {c.discount > 0 && <span className="billing-toggle-save">−{c.discount * 100}%</span>}
+            </button>
           ))}
         </div>
-        <p className="pricing-note">All plans include 14-day free trial · Prices shown in NGN for Nigerian market · VAT may apply</p>
+
+        <div className="pricing-grid pricing-grid--two">
+          {PLANS.map((p) => {
+            const total = cyclePrice(p.monthly, cycle.months, cycle.discount);
+            const perMonth = Math.round(total / cycle.months);
+            const fullMonthly = p.monthly * cycle.months;
+            const saved = fullMonthly - total;
+            return (
+              <div className={cn('card-glass', 'price-card', p.featured && 'primary')} key={p.plan}>
+                {p.ribbon && <div className="price-ribbon">{p.ribbon}</div>}
+                <div className="price-body">
+                  <div>
+                    <div className="price-plan">{p.plan}</div>
+                    <div className="price-tagline">{p.tagline}</div>
+                    <div className="price-amt-row">
+                      <span className="price-amt">{naira(perMonth)}</span>
+                      <span className="price-period">/ month</span>
+                    </div>
+                    <p className="price-billed">
+                      {cycle.key === 'monthly'
+                        ? 'Billed monthly'
+                        : `${naira(total)} billed ${cycle.label.toLowerCase()}`}
+                      {saved > 0 && <span className="price-saved"> · save {naira(saved)}</span>}
+                    </p>
+                    <p className="price-desc">{p.desc}</p>
+                  </div>
+                  <div className="price-divider" />
+                  <ul className="price-list">
+                    {p.features.map((f) => (
+                      <li key={f}><Tick />{f}</li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#get-started"
+                    className={p.variant === 'primary' ? 'btn-primary' : 'btn-ghost'}
+                    style={{ textAlign: 'center', justifyContent: 'center', display: 'flex' }}
+                  >
+                    {p.cta}
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <p className="pricing-note">
+          14-day free trial on every plan · Prices in NGN · VAT may apply · Upgrade or change cycle anytime
+        </p>
       </div>
     </section>
   );
